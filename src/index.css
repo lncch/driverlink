@@ -14,57 +14,78 @@
    --------------------------------------------------------------- */
 
 :root{
-  --ground:#E7E9E4;
-  --surface:#F3F5F0;
-  --sunk:#DADDD4;
-  --ink:#0D1512;
-  --muted:#57635C;
-  --line:#C4CABF;
+  /* Sampled from the DriverLink mark. Green and amber are too light for small
+     text on a pale ground, so each has a darkened ink variant beside it. */
+  --brand-navy:#092B4C;
+  --brand-green:#069767;
+  --brand-amber:#D9A33C;
 
-  --sign:#0B6B3A;
-  --sign-deep:#08512C;
-  --on-sign:#F6FAF6;
+  --ground:#E6E9EC;
+  --surface:#F3F5F7;
+  --sunk:#D9DEE3;
+  --ink:#0B1620;
+  --muted:#566573;
+  --line:#C2CAD2;
 
-  --amber:#9C6408;
-  --amber-fill:#EFDCB8;
+  --sign:#092B4C;
+  --sign-deep:#061D34;
+  --on-sign:#F7FAFC;
+
+  --accent:#069767;
+  --accent-ink:#056D4B;
+  --amber:#7A5810;
+  --amber-fill:#F0DFB8;
   --brick:#94382A;
 
-  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(8,32,20,.7);
+  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(9,43,76,.65);
 }
+
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#0D1512;
-    --surface:#161F1B;
-    --sunk:#0A110E;
-    --ink:#E7EDE8;
-    --muted:#93A099;
-    --line:#2A3630;
+    --brand-navy:#092B4C;
+    --brand-green:#069767;
+    --brand-amber:#D9A33C;
 
-    --sign:#2E8E56;
-    --sign-deep:#1B6B3C;
-    --on-sign:#F2FAF4;
+    --ground:#0B1620;
+    --surface:#13202C;
+    --sunk:#081019;
+    --ink:#E6EDF3;
+    --muted:#93A3B2;
+    --line:#25333F;
 
-    --amber:#D9A046;
-    --amber-fill:#33280F;
+    --sign:#12456F;
+    --sign-deep:#092B4C;
+    --on-sign:#F2F8FC;
+
+    --accent:#35C892;
+    --accent-ink:#35C892;
+    --amber:#E5B45E;
+    --amber-fill:#33290F;
     --brick:#D4796A;
 
     --panel-shadow:0 2px 0 var(--sign-deep), 0 12px 30px -20px rgba(0,0,0,.9);
   }
 }
 :root[data-theme="dark"]{
-  --ground:#0D1512;
-  --surface:#161F1B;
-  --sunk:#0A110E;
-  --ink:#E7EDE8;
-  --muted:#93A099;
-  --line:#2A3630;
+  --brand-navy:#092B4C;
+  --brand-green:#069767;
+  --brand-amber:#D9A33C;
 
-  --sign:#2E8E56;
-  --sign-deep:#1B6B3C;
-  --on-sign:#F2FAF4;
+  --ground:#0B1620;
+  --surface:#13202C;
+  --sunk:#081019;
+  --ink:#E6EDF3;
+  --muted:#93A3B2;
+  --line:#25333F;
 
-  --amber:#D9A046;
-  --amber-fill:#33280F;
+  --sign:#12456F;
+  --sign-deep:#092B4C;
+  --on-sign:#F2F8FC;
+
+  --accent:#35C892;
+  --accent-ink:#35C892;
+  --amber:#E5B45E;
+  --amber-fill:#33290F;
   --brick:#D4796A;
 
   --panel-shadow:0 2px 0 var(--sign-deep), 0 12px 30px -20px rgba(0,0,0,.9);
@@ -153,19 +174,17 @@ h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-
 
 /* ---------- title slide ---------- */
 .title-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2.6vw,36px)}
-.plate{
-  align-self:flex-start;display:inline-flex;align-items:stretch;
-  border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--surface);
+.lockup{
+  align-self:flex-start;
+  width:clamp(270px,30vw,420px);
+  aspect-ratio:3/1;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 10px 26px -20px rgba(9,43,76,.55);
 }
-.plate b{
-  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
-  font-size:15px;letter-spacing:.06em;padding:6px 12px;
-  background:var(--sign);color:var(--on-sign);display:flex;align-items:center;
-}
-.plate span{
-  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
-  font-size:15px;letter-spacing:.15em;padding:6px 16px;
-}
+.lockup video{width:100%;height:100%;object-fit:cover;display:block}
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
 .team div{background:var(--ground);padding:15px 17px 17px}
 .team .nm{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}

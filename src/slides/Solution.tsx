@@ -5,11 +5,11 @@ export default function Solution() {
   return (
     <>
       <SignPanel number={6} arabic="ما هو الحل المقترح؟" english="What are we proposing?" />
-      <h2>One verified platform. Website for both sides, app for drivers.</h2>
+      <h2>One verified platform, on web and mobile.</h2>
       <p className="lede">
-        Website and mobile application run on a shared database and backend, so a vacancy posted
-        by a recruiter on the web appears in a driver's app immediately, and an application
-        submitted on the app appears in the recruiter's pipeline.
+        Website and mobile application run on one database and backend, so a vacancy posted by a
+        recruiter appears on a driver's phone immediately, and an application submitted from the
+        phone appears in the recruiter's pipeline. Same account, same data, whichever you open.
       </p>
       <div className="feat">
         {FEATURES.map((f) => (
