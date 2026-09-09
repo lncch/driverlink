@@ -2,7 +2,7 @@ import { CAUSES, EFFECT } from '../content';
 
 const SPINE_Y = 345;
 const SPINE_X0 = 90;
-const SPINE_X1 = 1215;
+const SPINE_X1 = 1290;
 /** Where each bone meets the spine. Bones 0-2 sit above it, 3-5 below. */
 const ATTACH_X = [430, 750, 1070];
 const BONE_RUN = 155;
@@ -14,7 +14,7 @@ const FACTOR_T = [0.3, 0.55, 0.8];
 export default function Fishbone() {
   return (
     <div className="fish">
-      <svg viewBox="0 0 1580 690" role="img" aria-labelledby="fb-title">
+      <svg viewBox="0 60 1660 570" role="img" aria-labelledby="fb-title">
         <title id="fb-title">
           Fishbone cause and effect diagram for the DriverLink problem, with six cause
           categories feeding one effect
@@ -26,13 +26,13 @@ export default function Fishbone() {
           fill="currentColor"
         />
 
-        <rect x={1250} y={252} width={312} height={186} rx={7} fill="var(--brand-amber)" stroke="var(--sign-deep)" strokeWidth={2} />
+        <rect x={1330} y={252} width={320} height={186} rx={7} fill="var(--brand-amber)" stroke="var(--sign-deep)" strokeWidth={2} />
         {EFFECT.map((line, i) => (
           <text
             key={line}
-            x={1274}
-            y={300 + i * 30}
-            fontSize={19}
+            x={1356}
+            y={298 + i * 32}
+            fontSize={21}
             fontWeight={600}
             fill="var(--brand-navy)"
           >
@@ -50,8 +50,8 @@ export default function Fishbone() {
               <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--road)" strokeWidth={2.5} />
               <text
                 x={tipX}
-                y={above ? tipY - 15 : tipY + 27}
-                fontSize={19}
+                y={above ? tipY - 17 : tipY + 30}
+                fontSize={22}
                 fontWeight={700}
                 fill="var(--road)"
                 fontFamily="Archivo, Arial, sans-serif"
@@ -65,8 +65,8 @@ export default function Fishbone() {
                 const py = tipY + (SPINE_Y - tipY) * t;
                 return (
                   <g key={factor}>
-                    <line x1={px} y1={py} x2={px + 9} y2={py} stroke="var(--line)" strokeWidth={2} />
-                    <text x={px + 15} y={py + 4.5} fontSize={13.5} fill="var(--ink)">
+                    <line x1={px} y1={py} x2={px + 11} y2={py} stroke="var(--line)" strokeWidth={2} />
+                    <text x={px + 18} y={py + 5.5} fontSize={16.5} fill="var(--ink)">
                       {factor}
                     </text>
                   </g>

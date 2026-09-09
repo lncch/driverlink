@@ -62,12 +62,12 @@ export const PROBLEM_PAINS: Pain[] = [
 
 /** Six bones of the fishbone, in draw order: three above the spine, three below. */
 export const CAUSES: Cause[] = [
-  { category: 'Drivers', factors: ['Rely on word of mouth', 'No pipeline when a contract ends', 'Cannot compare employers'] },
-  { category: 'Companies', factors: ['Hire through personal networks', 'Generic ads reach the wrong people', 'Manual CV screening'] },
-  { category: 'Information', factors: ['Licence class never captured', 'Salary and route left vague', 'Experience is unstructured text'] },
-  { category: 'Technology', factors: ['General boards ignore licences', 'No filter by vehicle category', 'Nothing mobile-first for drivers'] },
+  { category: 'Drivers', factors: ['Rely on word of mouth', 'No pipeline after a contract', 'Cannot compare employers'] },
+  { category: 'Companies', factors: ['Hiring by personal networks', 'Ads reach the wrong people', 'Manual CV screening'] },
+  { category: 'Information', factors: ['Licence class never captured', 'Salary and route left vague', 'Experience is free text'] },
+  { category: 'Technology', factors: ['Job boards ignore licences', 'No filter by vehicle category', 'Nothing mobile-first'] },
   { category: 'Trust', factors: ['No identity verification', 'No commercial-record check', 'No history on either side'] },
-  { category: 'Market', factors: ['Overseas hiring is the default', 'Saudization targets unmet', 'Visa and transfer overhead'] },
+  { category: 'Market', factors: ['Overseas hiring is default', 'Saudization targets unmet', 'Visa and transfer overhead'] },
 ];
 
 export const EFFECT: string[] = [
