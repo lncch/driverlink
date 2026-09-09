@@ -1,10 +1,10 @@
-import Eyebrow from '../components/Eyebrow';
+import SignPanel from '../components/SignPanel';
 import { SCOPE_IN, SCOPE_OUT } from '../content';
 
 export default function Scope() {
   return (
     <>
-      <Eyebrow step="06 / SCOPE" rubric="Rubric 4 · Scope" arabic="حدود المشروع" />
+      <SignPanel number={7} arabic="ما حدود المشروع؟" english="Where does it stop?" />
       <h2>DriverLink is a job board. It stops at the hire.</h2>
       <div className="scope">
         <div className="in">

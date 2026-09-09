@@ -1,10 +1,10 @@
-import Eyebrow from '../components/Eyebrow';
+import SignPanel from '../components/SignPanel';
 import { FEATURES } from '../content';
 
 export default function Solution() {
   return (
     <>
-      <Eyebrow step="05 / PROPOSED SOLUTION" rubric="Rubric 4 · Solution" arabic="ما هو الحل المقترح؟" />
+      <SignPanel number={6} arabic="ما هو الحل المقترح؟" english="What are we proposing?" />
       <h2>One verified platform. Website for both sides, app for drivers.</h2>
       <p className="lede">
         Website and mobile application run on a shared database and backend, so a vacancy posted

@@ -1,19 +1,19 @@
-import Eyebrow from '../components/Eyebrow';
+import SignPanel from '../components/SignPanel';
 import PainList from '../components/PainList';
 import { PRIMARY_USERS, STAKEHOLDERS } from '../content';
 
 export default function Users() {
   return (
     <>
-      <Eyebrow step="03 / WHO IS AFFECTED" rubric="Rubric 3 · Users" arabic="من المتأثر؟" />
+      <SignPanel number={4} arabic="من المتأثر؟" english="Who is affected?" />
       <h2>Who uses it, and who else has a stake.</h2>
       <div className="cols c2">
         <div>
-          <h3 className="colhead" style={{ color: 'var(--accent-ink)' }}>Primary users</h3>
+          <h3 className="colhead">People who use the platform</h3>
           <PainList items={PRIMARY_USERS} />
         </div>
         <div>
-          <h3 className="colhead" style={{ color: 'var(--amber)' }}>Other stakeholders</h3>
+          <h3 className="colhead">People with a stake in it</h3>
           <PainList items={STAKEHOLDERS} />
         </div>
       </div>

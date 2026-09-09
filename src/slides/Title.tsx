@@ -8,10 +8,10 @@ export default function Title() {
         <span>DRIVERLINK</span>
       </div>
       <h1>
-        Hiring a driver<br />shouldn't depend<br />on who you know.
+        Hiring a driver shouldn't<br />depend on who you know.
       </h1>
       <p className="lede">
-        A recruitment platform that connects licensed professional drivers already living in
+        A recruitment platform connecting licensed professional drivers already living in
         Saudi Arabia with the companies that need them. Website for companies and drivers,
         mobile app for drivers.
       </p>
@@ -23,9 +23,10 @@ export default function Title() {
           </div>
         ))}
       </div>
-      <p className="meta">
-        SWE Group Project · Phase 1 · Presentation 1 · Dr. Abdulaziz Attaallah · 13 Sep 2026
-      </p>
+      <div className="credits">
+        <span>Software Engineering group project, Phase 1, Presentation 1</span>
+        <span>Dr. Abdulaziz Attaallah, 13 September 2026</span>
+      </div>
     </div>
   );
 }

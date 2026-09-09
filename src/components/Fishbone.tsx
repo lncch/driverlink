@@ -22,16 +22,20 @@ export default function Fishbone() {
 
         <line x1={SPINE_X0} y1={SPINE_Y} x2={SPINE_X1} y2={SPINE_Y} stroke="currentColor" strokeWidth={3} />
         <polygon
-          points={`${SPINE_X1},${SPINE_Y - 11} ${SPINE_X1 + 26},${SPINE_Y} ${SPINE_X1},${SPINE_Y + 11}`}
+          points={`${SPINE_X1},${SPINE_Y - 12} ${SPINE_X1 + 28},${SPINE_Y} ${SPINE_X1},${SPINE_Y + 12}`}
           fill="currentColor"
         />
 
-        <rect x={1250} y={255} width={310} height={180} rx={3} fill="var(--amber-fill)" stroke="var(--amber)" strokeWidth={2} />
-        <text x={1272} y={288} fontSize={12} fontWeight={700} letterSpacing="1.6" fill="var(--amber)">
-          THE EFFECT
-        </text>
+        <rect x={1250} y={252} width={312} height={186} rx={7} fill="var(--sign)" stroke="var(--sign-deep)" strokeWidth={2} />
         {EFFECT.map((line, i) => (
-          <text key={line} x={1272} y={322 + i * 26} fontSize={17} fontWeight={600} fill="var(--ink)">
+          <text
+            key={line}
+            x={1274}
+            y={300 + i * 30}
+            fontSize={19}
+            fontWeight={600}
+            fill="var(--on-sign)"
+          >
             {line}
           </text>
         ))}
@@ -43,17 +47,17 @@ export default function Fishbone() {
           const tipY = above ? TIP_Y_ABOVE : TIP_Y_BELOW;
           return (
             <g key={cause.category}>
-              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--accent)" strokeWidth={2.5} />
+              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--sign)" strokeWidth={2.5} />
               <text
                 x={tipX}
-                y={above ? tipY - 14 : tipY + 26}
-                fontSize={18}
-                fontWeight={800}
-                fill="var(--accent-ink)"
-                fontFamily="Overpass, sans-serif"
-                letterSpacing="0.5"
+                y={above ? tipY - 15 : tipY + 27}
+                fontSize={19}
+                fontWeight={700}
+                fill="var(--sign)"
+                fontFamily="Archivo, Arial, sans-serif"
+                fontStretch="112%"
               >
-                {cause.category.toUpperCase()}
+                {cause.category}
               </text>
               {cause.factors.map((factor, j) => {
                 const t = FACTOR_T[j];

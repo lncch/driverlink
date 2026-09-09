@@ -10,11 +10,36 @@ Software engineering group project, Phase 1.
 | Key | Action |
 |-----|--------|
 | `←` `→` `space` | Previous / next slide |
-| `T` | Start / pause the 7:00 countdown |
 | `P` | Print all slides stacked (Save as PDF for Blackboard) |
 
-Eight slides, budgeted to 420 seconds total. The bottom bar shows the current
-speaker and the elapsed time this slide should finish by.
+Eight slides for a 7-minute slot. Each opens with a bilingual sign panel, and
+the eight panels together walk the question sequence the presentation has to
+answer: what is the problem, why does it happen, who is affected, what do we
+want to achieve, what are we proposing.
+
+## Rubric coverage
+
+| Slide | Rubric criterion | Marks |
+|-------|------------------|-------|
+| 2, 3 | Project idea and problem, with fishbone root-cause analysis | 2 |
+| 5 | Goal and objectives | 2 |
+| 4 | Target users and stakeholders | 1 |
+| 6, 7 | Proposed solution and scope | 2 |
+| all | Presentation quality and time management | 1 |
+| all | Team participation and understanding | 2 |
+
+## Local development
+
+```
+npm install
+npm run dev        # http://localhost:5173/driverlink/
+npm run build      # typecheck, then bundle into dist/
+npm run preview    # serve the production build
+```
+
+Pushing to `main` builds and publishes through
+`.github/workflows/deploy.yml`. Content lives in `src/content.ts`; edit copy
+there rather than in the slide components.
 
 ## Contents
 

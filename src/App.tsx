@@ -3,15 +3,15 @@ import { SLIDES } from './deck';
 import { useDeck } from './useDeck';
 
 export default function App() {
-  const { index, go, remaining, running, toggleTimer } = useDeck();
+  const { index, go } = useDeck();
 
   return (
     <>
       {/* Every slide stays mounted so Cmd-P prints the whole deck. */}
       <div className="deck">
-        {SLIDES.map(({ Body, role }, n) => (
+        {SLIDES.map(({ Body, label }, n) => (
           <section
-            key={role + n}
+            key={label}
             className={n === index ? 'slide on' : 'slide'}
             aria-hidden={n !== index}
           >
@@ -20,17 +20,9 @@ export default function App() {
         ))}
       </div>
 
-      <p className="hint">
-        ← → navigate · <kbd>T</kbd> timer · <kbd>P</kbd> print
-      </p>
+      <p className="hint">← → to move · P to print</p>
 
-      <ControlBar
-        index={index}
-        go={go}
-        remaining={remaining}
-        running={running}
-        toggleTimer={toggleTimer}
-      />
+      <ControlBar index={index} go={go} />
     </>
   );
 }

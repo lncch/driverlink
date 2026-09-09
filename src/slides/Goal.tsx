@@ -1,18 +1,18 @@
-import Eyebrow from '../components/Eyebrow';
+import SignPanel from '../components/SignPanel';
 import { GOAL, OBJECTIVES } from '../content';
 
 export default function Goal() {
   return (
     <>
-      <Eyebrow step="04 / GOAL & OBJECTIVES" rubric="Rubric 2 · Goal" arabic="ما الذي نريد تحقيقه؟" />
+      <SignPanel number={5} arabic="ما الذي نريد تحقيقه؟" english="What do we want to achieve?" />
       <div className="goal">{GOAL}</div>
       <div className="tbl-wrap">
         <table>
           <thead>
             <tr>
-              <th style={{ width: 70 }}>ID</th>
+              <th style={{ width: 74 }}>ID</th>
               <th style={{ width: '38%' }}>Objective</th>
-              <th>Success indicator</th>
+              <th>How we will know it worked</th>
             </tr>
           </thead>
           <tbody>

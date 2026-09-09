@@ -1,11 +1,11 @@
-import Eyebrow from '../components/Eyebrow';
+import SignPanel from '../components/SignPanel';
 import PainList from '../components/PainList';
 import { PROBLEM_PAINS } from '../content';
 
 export default function Problem() {
   return (
     <>
-      <Eyebrow step="01 / THE PROBLEM" rubric="Rubric 1 · Problem" arabic="ما هي المشكلة؟" />
+      <SignPanel number={2} arabic="ما هي المشكلة؟" english="What is the problem?" />
       <h2>Two sides of the same market, and no place where they meet.</h2>
       <div className="quote">
         There is no single portal in Saudi Arabia for driver recruitment. The general job boards
