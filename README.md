@@ -3,7 +3,7 @@
 Presentation 1 (Project Introduction) for the DriverLink group project.
 Software engineering group project, Phase 1.
 
-**Live deck:** https://lncch.github.io/driverlink-deck/
+**Live deck:** https://lncch.github.io/driverlink/
 
 ## Using it
 
