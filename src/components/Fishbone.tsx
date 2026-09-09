@@ -47,13 +47,13 @@ export default function Fishbone() {
           const tipY = above ? TIP_Y_ABOVE : TIP_Y_BELOW;
           return (
             <g key={cause.category}>
-              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--sign)" strokeWidth={2.5} />
+              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--road)" strokeWidth={2.5} />
               <text
                 x={tipX}
                 y={above ? tipY - 15 : tipY + 27}
                 fontSize={19}
                 fontWeight={700}
-                fill="var(--sign)"
+                fill="var(--road)"
                 fontFamily="Archivo, Arial, sans-serif"
                 fontStretch="112%"
               >

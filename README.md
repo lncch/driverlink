@@ -27,13 +27,15 @@ needs scrolling during a talk. See `src/components/Slide.tsx`.
 
 ## Brand
 
-Logo and animated lockup by the team. Colours are sampled from the mark:
+Logo by the team. Colours are sampled from the mark, and each one keeps the
+role it plays in the logo: navy is the letterform, green is the road, amber is
+the pin.
 
 | Token | Hex | Use |
 |-------|-----|-----|
 | navy | `#092B4C` | sign panels, headings, ink |
-| green | `#069767` | accents; darkened to `#056D4B` for small text on a pale ground |
-| amber | `#D9A33C` | the fishbone effect box; darkened to `#7A5810` for text |
+| green | `#069767` | progress lane, active dot, goal panel, IDs, fishbone bones; `#056D4B` for small text, `#057A53` for fills under white text |
+| amber | `#D9A33C` | the fishbone effect box, the way a road warning sign is marked |
 
 Green and amber are too light for small text at full strength (3.05:1 and
 1.86:1 against the pale ground), so each keeps a darkened ink variant that

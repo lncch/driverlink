@@ -1,22 +1,15 @@
 import { TEAM } from '../content';
-import logoVideo from '../assets/logo.mp4';
-import logoPoster from '../assets/logo-poster.jpg';
+import mark from '../assets/logo-mark.png';
 
 export default function Title() {
   return (
     <div className="title-wrap">
-      {/* The team's animated lockup. It is drawn on white, so it gets its own
-          card rather than bleeding into whichever theme the room's laptop uses.
-          Cropped to the middle band, where the mark and wordmark actually sit. */}
-      <div className="lockup">
-        <video
-          src={logoVideo}
-          poster={logoPoster}
-          autoPlay
-          muted
-          playsInline
-          aria-label="DriverLink logo"
-        />
+      <div className="brandrow">
+        <img className="mark" src={mark} alt="" width={512} height={468} />
+        <div className="brandname">
+          DriverLink
+          <span lang="ar" dir="rtl">منصّة توظيف السائقين في السعودية</span>
+        </div>
       </div>
 
       <h1>Hiring a driver shouldn't<br />depend on who you know.</h1>
