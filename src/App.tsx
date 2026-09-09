@@ -1,9 +1,10 @@
 import ControlBar from './components/ControlBar';
+import HelpOverlay from './components/HelpOverlay';
 import { SLIDES } from './deck';
 import { useDeck } from './useDeck';
 
 export default function App() {
-  const { index, go } = useDeck();
+  const { index, go, blanked, unblank, helpOpen, toggleHelp, fullscreen, toggleFullscreen } = useDeck();
 
   return (
     <>
@@ -20,9 +21,19 @@ export default function App() {
         ))}
       </div>
 
-      <p className="hint">← → to move · P to print</p>
+      <ControlBar
+        index={index}
+        go={go}
+        fullscreen={fullscreen}
+        toggleFullscreen={toggleFullscreen}
+        toggleHelp={toggleHelp}
+      />
 
-      <ControlBar index={index} go={go} />
+      {helpOpen && <HelpOverlay onClose={toggleHelp} />}
+
+      {blanked && (
+        <button type="button" className="blank" onClick={unblank} aria-label="Screen blanked. Click to resume." />
+      )}
     </>
   );
 }

@@ -1,3 +1,12 @@
+/* Thmanyah, by the Saudi media company of the same name. Free for personal
+   and commercial use, and it carries Latin and Arabic in one family, so the
+   bilingual sign panels are set in a single typeface rather than two. */
+@font-face{font-family:"Thmanyah Sans";src:url("./fonts/thmanyah-sans-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("./fonts/thmanyah-sans-500.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("./fonts/thmanyah-sans-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Thmanyah Display";src:url("./fonts/thmanyah-display-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Thmanyah Display";src:url("./fonts/thmanyah-display-900.woff2") format("woff2");font-weight:900;font-display:swap}
+
 /* ---------------------------------------------------------------
    DriverLink deck.
    Palette and layout take their cues from Saudi highway guide signs:
@@ -67,23 +76,23 @@ img{max-width:100%}
 body{
   background:var(--ground);
   color:var(--ink);
-  font-family:"IBM Plex Sans Arabic",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:"Thmanyah Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:16px;
   -webkit-font-smoothing:antialiased;
 }
 
-/* Archivo carries a width axis; the deck uses both ends of it. */
+/* Two members of one superfamily: the serif display for headlines, the sans for everything else. */
 .display{
-  font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
-  font-stretch:125%;
+  font-family:"Thmanyah Display",Georgia,serif;
+  
   font-weight:800;
   letter-spacing:-.022em;
   line-height:1.02;
   text-wrap:balance;
 }
 .condensed{
-  font-family:Archivo,"Arial Narrow",Arial,sans-serif;
-  font-stretch:75%;
+  font-family:"Thmanyah Sans",Arial,sans-serif;
+  
   font-variant-numeric:tabular-nums;
 }
 
@@ -109,7 +118,7 @@ body{
   max-width:100%;
 }
 .sign-no{
-  font-family:Archivo,Arial,sans-serif;font-stretch:75%;font-weight:700;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
   font-size:clamp(24px,3vw,40px);line-height:1;
   display:flex;align-items:center;
   padding:0 clamp(14px,1.4vw,20px);
@@ -119,15 +128,15 @@ body{
 .sign-text{display:flex;flex-direction:column;gap:1px;padding:clamp(10px,1.2vw,15px) clamp(16px,2vw,26px)}
 .sign-ar{font-size:clamp(17px,1.9vw,26px);font-weight:500;line-height:1.35}
 .sign-en{
-  font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:600;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:600;
   font-size:clamp(13px,1.15vw,17px);line-height:1.25;opacity:.93;
 }
 
-h1{font-family:Archivo,Arial,sans-serif;font-stretch:125%;font-weight:800;
-   font-size:clamp(38px,6vw,84px);line-height:.97;letter-spacing:-.03em;text-wrap:balance}
-h2{font-family:Archivo,Arial,sans-serif;font-stretch:125%;font-weight:800;
-   font-size:clamp(25px,3.3vw,46px);line-height:1.04;letter-spacing:-.022em;text-wrap:balance}
-h3{font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;letter-spacing:-.01em}
+h1{font-family:"Thmanyah Display",Georgia,serif;font-weight:900;
+   font-size:clamp(38px,6vw,84px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance}
+h2{font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
+   font-size:clamp(25px,3.3vw,46px);line-height:1.1;letter-spacing:-.012em;text-wrap:balance}
+h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-.01em}
 
 .lede{font-size:clamp(15px,1.3vw,19px);line-height:1.6;color:var(--muted);max-width:72ch}
 .note{font-size:13px;line-height:1.5;color:var(--muted)}
@@ -139,17 +148,17 @@ h3{font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;letter
   border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--surface);
 }
 .plate b{
-  font-family:Archivo,Arial,sans-serif;font-stretch:75%;font-weight:700;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
   font-size:15px;letter-spacing:.06em;padding:6px 12px;
   background:var(--sign);color:var(--on-sign);display:flex;align-items:center;
 }
 .plate span{
-  font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
   font-size:15px;letter-spacing:.15em;padding:6px 16px;
 }
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
 .team div{background:var(--ground);padding:15px 17px 17px}
-.team .nm{font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;font-size:17px;letter-spacing:-.01em}
+.team .nm{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
 .team .rl{font-size:13px;color:var(--muted);line-height:1.45;margin-top:4px}
 .credits{display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--muted)}
 
@@ -162,7 +171,7 @@ h3{font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;letter
 .pain{display:flex;gap:16px;padding:15px 0;border-top:1px solid var(--line)}
 .pain:last-child{border-bottom:1px solid var(--line)}
 .pain .who{
-  font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
   font-size:15px;color:var(--sign);min-width:108px;padding-top:1px;letter-spacing:-.01em;
 }
 .pain .txt{font-size:clamp(14px,1.15vw,16.5px);line-height:1.58;max-width:68ch}
@@ -178,11 +187,11 @@ h3{font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;letter
 table{border-collapse:collapse;width:100%;min-width:620px}
 th,td{text-align:start;padding:10px 15px;font-size:14px;line-height:1.5;border-bottom:1px solid var(--line);vertical-align:top}
 thead th{
-  font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;font-size:13px;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:13px;
   color:var(--ink);background:var(--sunk);position:sticky;top:0;letter-spacing:-.005em;
 }
 tbody tr:last-child td{border-bottom:0}
-td.id{font-family:Archivo,Arial,sans-serif;font-stretch:75%;font-weight:700;font-size:14px;
+td.id{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:14px;
       color:var(--sign);white-space:nowrap;font-variant-numeric:tabular-nums}
 td.m{color:var(--muted)}
 
@@ -192,7 +201,7 @@ td.m{color:var(--muted)}
 .scope .in h3{color:var(--sign)}
 .scope .out h3{color:var(--brick)}
 .item{display:flex;gap:13px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
-.item .k{font-family:Archivo,Arial,sans-serif;font-stretch:75%;font-weight:700;font-size:14px;
+.item .k{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:14px;
          color:var(--muted);min-width:52px;padding-top:1px}
 .item .d{color:var(--muted);display:block;font-size:13.5px;margin-top:3px;line-height:1.45}
 
@@ -200,14 +209,14 @@ td.m{color:var(--muted)}
 .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
 .feat article{background:var(--surface);padding:17px 19px 19px;display:flex;flex-direction:column;gap:7px}
 .feat h3{font-size:17.5px}
-.feat .k{font-family:Archivo,Arial,sans-serif;font-stretch:75%;font-weight:700;font-size:13px;color:var(--sign)}
+.feat .k{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:13px;color:var(--sign)}
 .feat p{font-size:13.5px;line-height:1.55;color:var(--muted)}
 
 /* ---------- goal ---------- */
 .goal{
   background:var(--sign);color:var(--on-sign);
   padding:clamp(20px,2.6vw,34px);border-radius:7px;
-  font-family:Archivo,Arial,sans-serif;font-stretch:112%;font-weight:700;
+  font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
   font-size:clamp(19px,2.1vw,30px);line-height:1.28;letter-spacing:-.018em;
   max-width:30ch;box-shadow:var(--panel-shadow);
 }
@@ -215,7 +224,7 @@ td.m{color:var(--muted)}
 /* ---------- fishbone ---------- */
 .fish{overflow-x:auto;background:var(--surface);border:1px solid var(--line);padding:8px}
 .fish svg{display:block;min-width:1080px;width:100%;height:auto}
-.fish text{font-family:"IBM Plex Sans Arabic",sans-serif}
+.fish text{font-family:"Thmanyah Sans",sans-serif}
 
 /* ---------- bottom bar ---------- */
 .bar{
@@ -235,7 +244,7 @@ td.m{color:var(--muted)}
 .dots button[aria-current="true"]{background:var(--sign);border-color:var(--sign)}
 .where{font-size:13.5px;color:var(--muted)}
 .count{
-  font-family:Archivo,Arial,sans-serif;font-stretch:75%;font-weight:700;
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
   font-size:15px;color:var(--ink);margin-inline-start:auto;font-variant-numeric:tabular-nums;
 }
 .count i{font-style:normal;color:var(--muted);padding:0 1px}
@@ -255,3 +264,43 @@ td.m{color:var(--muted)}
   .slide{display:flex!important;break-after:page;min-height:auto;padding:26px;animation:none}
   body{background:#fff;color:#000}
 }
+
+/* ---------- overlays and bar controls ---------- */
+.icon{
+  font:inherit;font-size:14px;line-height:1;
+  width:28px;height:26px;display:grid;place-items:center;
+  border:1px solid var(--line);border-radius:4px;
+  background:var(--surface);color:var(--muted);cursor:pointer;
+  transition:color .16s, border-color .16s;
+}
+.icon:hover{color:var(--ink);border-color:var(--sign)}
+
+.scrim{
+  position:fixed;inset:0;z-index:40;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--ink) 55%, transparent);
+  padding:24px;
+}
+.help{
+  background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;
+  padding:26px 30px;max-width:430px;width:100%;
+  display:flex;flex-direction:column;gap:16px;
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.5);
+}
+.help h3{font-size:20px}
+.help dl{display:flex;flex-direction:column;gap:9px;margin:0}
+.help dl div{display:flex;gap:16px;align-items:baseline}
+.help dt{
+  min-width:92px;font-weight:700;font-size:13.5px;color:var(--sign);
+  font-variant-numeric:tabular-nums;
+}
+.help dd{margin:0;font-size:14.5px}
+.help .btn{align-self:flex-start}
+
+.blank{
+  position:fixed;inset:0;z-index:60;
+  background:#000;border:0;padding:0;margin:0;
+  cursor:pointer;
+}
+
+@media print{.scrim,.blank,.icon{display:none}}

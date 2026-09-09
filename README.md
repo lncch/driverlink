@@ -10,7 +10,24 @@ Software engineering group project, Phase 1.
 | Key | Action |
 |-----|--------|
 | `←` `→` `space` | Previous / next slide |
+| `F` | Fullscreen |
+| `B` | Blank the screen to black |
+| `?` | Keyboard shortcuts |
 | `P` | Print all slides stacked (Save as PDF for Blackboard) |
+| `Esc` | Close the overlay, or unblank |
+
+Swipe left and right works on a touchscreen. The URL tracks the slide
+(`/driverlink/#5`), so a reload keeps your place and a link can point at one
+slide. A screen wake lock holds the display on while the deck is open.
+
+## Typography
+
+Set in [Thmanyah](https://font.thmanyah.com/), released by the Saudi media
+company of the same name, free for personal and commercial use. It carries
+Latin and Arabic in one family, so the bilingual sign panels are one typeface
+rather than two. Thmanyah Serif Display for headlines, Thmanyah Sans for
+everything else. The five weights are self-hosted from `src/fonts/`, so the
+deck needs no font CDN at presentation time.
 
 Eight slides for a 7-minute slot. Each opens with a bilingual sign panel, and
 the eight panels together walk the question sequence the presentation has to
