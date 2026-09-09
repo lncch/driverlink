@@ -260,7 +260,7 @@ td.m{color:var(--muted)}
 
 /* ---------- fishbone ---------- */
 .fish{overflow-x:auto;background:var(--surface);border:1px solid var(--line);padding:8px}
-.fish svg{display:block;width:100%;height:clamp(250px,42vh,520px)}
+.fish svg{display:block;width:100%;height:clamp(280px,54vh,660px)}
 .fish text{font-family:"Thmanyah Sans",sans-serif}
 
 /* ---------- bottom bar ---------- */
@@ -371,20 +371,17 @@ td.m{color:var(--muted)}
 }
 
 /* ---------- expandable diagrams and tables ---------- */
-.expandable{position:relative}
-.expand{
-  position:absolute;inset-block-end:10px;inset-inline-end:12px;
-  font:inherit;font-size:12.5px;font-weight:500;
-  padding:5px 12px;border-radius:5px;cursor:pointer;
-  border:1px solid var(--line);
-  background:color-mix(in srgb,var(--surface) 92%, transparent);
-  color:var(--muted);backdrop-filter:blur(4px);
-  opacity:0;transition:opacity .16s, color .16s, border-color .16s;
+.expandable{position:relative;cursor:zoom-in;border-radius:3px}
+.expandable:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.hint-expand{
+  position:absolute;inset-block-end:9px;inset-inline-end:12px;
+  font-size:12px;color:var(--muted);
+  padding:3px 9px;border-radius:4px;
+  background:color-mix(in srgb,var(--surface) 88%, transparent);
+  opacity:.55;transition:opacity .16s, color .16s;pointer-events:none;
 }
-.expandable:hover .expand,
-.expand:focus-visible{opacity:1}
-.expand:hover{color:var(--road);border-color:var(--road)}
-@media (pointer:coarse){.expand{opacity:1}}
+.expandable:hover .hint-expand,
+.expandable:focus-visible .hint-expand{opacity:1;color:var(--road)}
 
 .scrim.expanded{padding:clamp(16px,3vw,44px);align-items:center}
 .expanded-inner{

@@ -29,8 +29,8 @@ the scaled measure rather than being stretched. Because the width feeds back
 into the height, the fit iterates to a fixed point. See
 `src/components/Slide.tsx`.
 
-Hovering the fishbone or the objectives table reveals an Expand control that
-opens it full screen; `Esc` or a click outside closes it. See
+Clicking anywhere on the fishbone or the objectives table opens it full
+screen; `Esc` or a click outside closes it. See
 `src/components/Expandable.tsx`.
 
 ## Brand

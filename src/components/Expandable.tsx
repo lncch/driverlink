@@ -1,15 +1,18 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type KeyboardEvent, type ReactNode } from 'react';
 
 interface Props {
-  /** Named in the expand control and read out to screen readers. */
+  /** Announced to screen readers and used as the dialog's name. */
   label: string;
   children: ReactNode;
 }
 
 /**
- * Shows a diagram or table inline, and again full-screen on click. The deck's
- * key handler checks `body[data-overlay]` so the arrow keys move within the
- * expanded view's page rather than changing slide underneath it.
+ * Shows a diagram or table inline, and again full screen when the box is
+ * clicked anywhere. A button element cannot wrap a table, so this is the
+ * role/tabIndex pattern instead.
+ *
+ * The deck's key handler checks `body[data-overlay]`, so the arrow keys do not
+ * change slide behind an open view.
  */
 export default function Expandable({ label, children }: Props) {
   const [open, setOpen] = useState(false);
@@ -17,7 +20,7 @@ export default function Expandable({ label, children }: Props) {
   useEffect(() => {
     if (!open) return;
     document.body.dataset.overlay = 'expanded';
-    const onKey = (e: KeyboardEvent) => {
+    const onKey = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(false);
     };
     window.addEventListener('keydown', onKey);
@@ -27,13 +30,26 @@ export default function Expandable({ label, children }: Props) {
     };
   }, [open]);
 
+  function onKeyDown(e: KeyboardEvent<HTMLDivElement>) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    // Space also advances the deck, so keep it from reaching the window handler.
+    e.preventDefault();
+    e.stopPropagation();
+    setOpen(true);
+  }
+
   return (
     <>
-      <div className="expandable">
+      <div
+        className="expandable"
+        role="button"
+        tabIndex={0}
+        aria-label={`Expand ${label}`}
+        onClick={() => setOpen(true)}
+        onKeyDown={onKeyDown}
+      >
         {children}
-        <button type="button" className="expand" onClick={() => setOpen(true)}>
-          Expand {label}
-        </button>
+        <span className="hint-expand" aria-hidden="true">Click to expand</span>
       </div>
 
       {open && (

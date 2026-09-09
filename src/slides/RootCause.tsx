@@ -10,11 +10,6 @@ export default function RootCause() {
       <Expandable label="the fishbone diagram">
         <Fishbone />
       </Expandable>
-      <p className="lede" style={{ maxWidth: 'none' }}>
-        The deepest cause sits in the middle two bones. The information a hiring decision needs,
-        licence class, vehicle category, verified identity and real salary, is never captured in a
-        structured, searchable form, so no channel can match on it.
-      </p>
     </>
   );
 }
