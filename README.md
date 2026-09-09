@@ -16,9 +16,14 @@ Software engineering group project, Phase 1.
 | `P` | Print all slides stacked (Save as PDF for Blackboard) |
 | `Esc` | Close the overlay, or unblank |
 
-Swipe left and right works on a touchscreen. The URL tracks the slide
+Or use the on-screen controls: the `‹` `›` buttons in the bar, the dot for
+any slide, or the invisible click strips down the left and right edges of the
+screen. Swipe left and right works on a touchscreen. The URL tracks the slide
 (`/driverlink/#5`), so a reload keeps your place and a link can point at one
 slide. A screen wake lock holds the display on while the deck is open.
+
+Each slide scales its own content down until it fits the window, so nothing
+needs scrolling during a talk. See `src/components/Slide.tsx`.
 
 ## Typography
 

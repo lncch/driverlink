@@ -144,6 +144,7 @@ export function useDeck() {
   return {
     index,
     go,
+    step,
     blanked,
     unblank: () => setBlanked(false),
     helpOpen,
