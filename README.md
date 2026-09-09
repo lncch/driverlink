@@ -22,8 +22,16 @@ screen. Swipe left and right works on a touchscreen. The URL tracks the slide
 (`/driverlink/#5`), so a reload keeps your place and a link can point at one
 slide. A screen wake lock holds the display on while the deck is open.
 
-Each slide scales its own content down until it fits the window, so nothing
-needs scrolling during a talk. See `src/components/Slide.tsx`.
+Each slide sizes its own content to the window: dense slides shrink so nothing
+needs scrolling, sparse ones grow so the frame is not half empty. The body is
+laid out at `100 / scale` percent width and then scaled, so text re-wraps at
+the scaled measure rather than being stretched. Because the width feeds back
+into the height, the fit iterates to a fixed point. See
+`src/components/Slide.tsx`.
+
+Hovering the fishbone or the objectives table reveals an Expand control that
+opens it full screen; `Esc` or a click outside closes it. See
+`src/components/Expandable.tsx`.
 
 ## Brand
 

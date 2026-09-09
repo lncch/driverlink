@@ -139,7 +139,7 @@ body{
   display:flex;flex-direction:column;
   gap:clamp(15px,1.9vw,28px);
   width:100%;
-  transform-origin:top center;
+  transform-origin:top left;
   will-change:transform;
 }
 @keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
@@ -260,7 +260,7 @@ td.m{color:var(--muted)}
 
 /* ---------- fishbone ---------- */
 .fish{overflow-x:auto;background:var(--surface);border:1px solid var(--line);padding:8px}
-.fish svg{display:block;min-width:1080px;width:100%;height:auto}
+.fish svg{display:block;width:100%;height:clamp(250px,42vh,520px)}
 .fish text{font-family:"Thmanyah Sans",sans-serif}
 
 /* ---------- bottom bar ---------- */
@@ -369,3 +369,38 @@ td.m{color:var(--muted)}
   .frame{height:auto!important;overflow:visible!important;display:block!important}
   .body{transform:none!important}
 }
+
+/* ---------- expandable diagrams and tables ---------- */
+.expandable{position:relative}
+.expand{
+  position:absolute;inset-block-end:10px;inset-inline-end:12px;
+  font:inherit;font-size:12.5px;font-weight:500;
+  padding:5px 12px;border-radius:5px;cursor:pointer;
+  border:1px solid var(--line);
+  background:color-mix(in srgb,var(--surface) 92%, transparent);
+  color:var(--muted);backdrop-filter:blur(4px);
+  opacity:0;transition:opacity .16s, color .16s, border-color .16s;
+}
+.expandable:hover .expand,
+.expand:focus-visible{opacity:1}
+.expand:hover{color:var(--road);border-color:var(--road)}
+@media (pointer:coarse){.expand{opacity:1}}
+
+.scrim.expanded{padding:clamp(16px,3vw,44px);align-items:center}
+.expanded-inner{
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:clamp(14px,2vw,26px);
+  width:100%;max-width:1700px;max-height:100%;
+  overflow:auto;display:flex;flex-direction:column;gap:16px;
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.55);
+}
+.expanded-inner .fish{border:0;background:transparent;padding:0}
+.expanded-inner .fish svg{height:auto;max-height:78vh}
+.expanded-inner .tbl-wrap{border:0}
+.expanded-inner table{min-width:820px}
+.expanded-inner th,.expanded-inner td{font-size:17px;padding:13px 18px}
+.expanded-inner td.id{font-size:16px}
+.expanded-inner .expand{display:none}
+.close{align-self:flex-end}
+
+@media print{.expand{display:none}}

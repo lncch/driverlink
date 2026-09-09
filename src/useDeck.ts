@@ -75,6 +75,8 @@ export function useDeck() {
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // an expanded diagram owns the keyboard until it closes
+      if (document.body.dataset.overlay && e.key !== 'Escape') return;
       switch (e.key) {
         case 'ArrowRight':
         case ' ':

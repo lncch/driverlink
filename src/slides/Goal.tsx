@@ -1,4 +1,5 @@
 import SignPanel from '../components/SignPanel';
+import Expandable from '../components/Expandable';
 import { GOAL, OBJECTIVES } from '../content';
 
 export default function Goal() {
@@ -6,7 +7,8 @@ export default function Goal() {
     <>
       <SignPanel number={5} arabic="ما الذي نريد تحقيقه؟" english="What do we want to achieve?" />
       <div className="goal">{GOAL}</div>
-      <div className="tbl-wrap">
+      <Expandable label="the objectives table">
+        <div className="tbl-wrap">
         <table>
           <thead>
             <tr>
@@ -25,7 +27,8 @@ export default function Goal() {
             ))}
           </tbody>
         </table>
-      </div>
+        </div>
+      </Expandable>
     </>
   );
 }

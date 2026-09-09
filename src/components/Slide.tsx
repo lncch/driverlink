@@ -1,7 +1,9 @@
-import { useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+import { useLayoutEffect, useRef, type ReactNode } from 'react';
 
 /** Below this, shrinking hurts more than scrolling would. */
 const MIN_SCALE = 0.52;
+/** Above this, a sparse slide starts to look like a poster. */
+const MAX_SCALE = 1.34;
 
 interface Props {
   active: boolean;
@@ -9,38 +11,56 @@ interface Props {
 }
 
 /**
- * Scales a slide's content down until it fits the window, so nothing needs
- * scrolling during a talk. Transforms do not affect layout, so scrollHeight
- * still reports the natural, unscaled size while a scale is applied.
+ * Sizes a slide's content to the window: dense slides shrink so nothing needs
+ * scrolling, sparse ones grow so the frame is not half empty.
+ *
+ * The body is laid out at `100 / scale` percent width and then scaled, so it
+ * still spans the frame exactly afterwards. Text therefore re-wraps at the
+ * scaled measure rather than being stretched, which is why the height is
+ * measured a second time once the width has changed.
  */
 export default function Slide({ active, children }: Props) {
   const frame = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
 
   useLayoutEffect(() => {
     const f = frame.current;
     const b = body.current;
     if (!f || !b) return;
 
+    const clamp = (s: number) => Math.max(MIN_SCALE, Math.min(MAX_SCALE, s));
+
     const fit = () => {
-      const h = b.scrollHeight;
-      const w = b.scrollWidth;
       const availH = f.clientHeight;
-      const availW = f.clientWidth;
-      if (!h || !w || !availH) return;
-      // A hair under the exact ratio, so sub-pixel rounding cannot clip a last row.
-      const next = Math.max(MIN_SCALE, Math.min(1, (availH / h) * 0.985, availW / w));
-      setScale((prev) => (Math.abs(prev - next) < 0.003 ? prev : next));
+      if (!availH) return;
+
+      b.style.transform = 'none';
+
+      // Changing the width re-wraps text and re-proportions the fishbone, which
+      // changes the height, which changes the scale. Iterate to the fixed point.
+      let s = 1;
+      for (let pass = 0; pass < 5; pass += 1) {
+        b.style.width = `${100 / s}%`;
+        const h = b.scrollHeight;
+        if (!h) return;
+        const next = clamp((availH / h) * 0.985);
+        if (Math.abs(next - s) < 0.004) {
+          s = next;
+          break;
+        }
+        s = next;
+      }
+
+      b.style.width = `${100 / s}%`;
+      b.style.transform = `scale(${s})`;
     };
 
     fit();
-    // Layout settles over a frame or two; measure again once it has.
-    const raf = requestAnimationFrame(() => requestAnimationFrame(fit));
+    const raf = requestAnimationFrame(fit);
+    // Only the frame is observed: the body's size is what this effect changes,
+    // so watching it would loop.
     const ro = new ResizeObserver(fit);
     ro.observe(f);
-    ro.observe(b);
-    // Web fonts change the measurement, so re-fit once they have loaded.
     document.fonts?.ready.then(fit).catch(() => undefined);
     return () => {
       cancelAnimationFrame(raf);
@@ -51,7 +71,7 @@ export default function Slide({ active, children }: Props) {
   return (
     <section className={active ? 'slide on' : 'slide'} aria-hidden={!active}>
       <div className="frame" ref={frame}>
-        <div className="body" ref={body} style={{ transform: `scale(${scale})` }}>
+        <div className="body" ref={body}>
           {children}
         </div>
       </div>
