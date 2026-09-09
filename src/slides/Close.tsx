@@ -13,10 +13,7 @@ export default function Close() {
           <div className="quote">
             Phase 2 takes this into requirements elicitation and the use-case model.
           </div>
-          <p className="lede" style={{ marginTop: 20 }}>Questions.</p>
-          <p className="note" style={{ marginTop: 26 }}>
-            Slides and the Phase 1 report are submitted on Blackboard.
-          </p>
+          <p className="lede" style={{ marginTop: 20 }}>Any Questions?</p>
         </div>
       </div>
     </>
