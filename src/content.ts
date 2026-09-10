@@ -37,7 +37,7 @@ export interface Cause {
 
 export const TEAM: Member[] = [
   { name: 'Almoayyad Abuljdail', role: 'Team leader · organization, slides, integration' },
-  { name: 'Ibrahim Alyami', role: 'Problem, objectives, root-cause analysis' },
+  { name: 'Ibrahim Alyami', role: 'Problem, objectives, root causes, constraints' },
   { name: 'Elyas Babour', role: 'Goal, system boundary, scope' },
   { name: 'Mohammed Al Ghalib', role: 'Identification, introduction, proposed system' },
 ];
@@ -45,7 +45,7 @@ export const TEAM: Member[] = [
 export const PROBLEM_PAINS: Pain[] = [
   {
     who: 'Drivers',
-    text: 'A driver whose contract just ended has no pipeline. They ask around, wait on word of mouth, and lose weeks to a search with no visibility into salary, route type, or housing before they commit.',
+    text: 'A driver whose contract just ended has no pipeline. Postings are scattered and disorganised, so they lose weeks to a search with no visibility into salary, route type, or housing before they commit.',
     stress: 'no visibility into salary, route type, or housing',
   },
   {
@@ -90,25 +90,29 @@ export const STAKEHOLDERS: Pain[] = [
 ];
 
 export const GOAL =
-  'Connect companies that need professional drivers with the drivers already in Saudi Arabia, through one trusted, verified platform.';
+  'Connect companies that need professional drivers with those already in Saudi Arabia, through one trusted platform.';
+
+/** The report's long-term half of the goal, section 1.6. */
+export const GOAL_LONG =
+  'In the long term, DriverLink aims to raise the driving and transport professions in Saudi Arabia to a world-class level. A clear, fast hiring system should raise driver wages, improve industry rules, and build a work environment matching the professional standards of the UK, US and EU.';
 
 export const OBJECTIVES: Objective[] = [
-  { id: 'OBJ-1', objective: 'Provide an employment platform specialised for professional drivers.', indicator: '20 verified companies and 200 verified drivers registered within 3 months of launch.' },
-  { id: 'OBJ-2', objective: 'Make it faster for a driver to find a suitable job.', indicator: 'Median time from verified account to first submitted application under 10 minutes.' },
-  { id: 'OBJ-3', objective: 'Help companies hire drivers already living in the Kingdom instead of recruiting from abroad.', indicator: '70% of closed vacancies filled by a driver already resident in Saudi Arabia.' },
-  { id: 'OBJ-4', objective: 'Let companies create detailed, searchable vacancies.', indicator: '100% of published vacancies carry licence class, vehicle category, city, salary range and working hours; the form rejects a posting without them.' },
-  { id: 'OBJ-5', objective: 'Cut the time it takes to hire a driver with the right qualifications.', indicator: "Median 7 days or fewer from posting to first shortlist, against each company's own pre-platform baseline recorded at sign-up." },
-  { id: 'OBJ-6', objective: 'Let drivers submit and track applications.', indicator: 'Every application shows a timestamped state (Submitted, Viewed, Shortlisted, Rejected, Hired); 90% reach a final state within 30 days.' },
-  { id: 'OBJ-7', objective: 'Reduce unsuitable applications by showing requirements before a driver applies.', indicator: 'Under 15% of applications rejected for a requirement that was already stated in the posting.' },
+  { id: 'OBJ-1', objective: 'To provide a specialized employment platform for professional drivers.', indicator: 'Increase in the total number of active driver profiles and establishments registering on the platform.' },
+  { id: 'OBJ-2', objective: 'To facilitate the process of finding a new driving job for drivers.', indicator: 'Higher percentage of driver profiles who have submitted at least one job application after doing a search session.' },
+  { id: 'OBJ-3', objective: 'To assist companies and establishments to look for new drivers living in Saudi Arabia rather than recruiting from outside the Kingdom.', indicator: 'Increase in the number of filled positions given to drivers already in the Kingdom, out of total portal hiring placements.' },
+  { id: 'OBJ-4', objective: 'To enable companies to create detailed and searchable driver vacancies.', indicator: 'Rising rate of published job listings that fully abide by all required structured data fields.' },
+  { id: 'OBJ-5', objective: 'To reduce the time for companies and establishments to hire drivers with the desired qualifications.', indicator: 'Reducing the time to hire by at least 30% of the time elapsed in traditional hiring methods.' },
+  { id: 'OBJ-6', objective: 'To allow drivers to submit and track job applications.', indicator: 'All submitted applications can be observed in real-time status updates on the platform.' },
+  { id: 'OBJ-7', objective: 'To reduce unsuitable applications by presenting requirements clearly before a driver applies.', indicator: 'Reducing the rate of job application criteria that get misunderstood by drivers while applying via the platform.' },
 ];
 
 export const FEATURES: Feature[] = [
   { id: 'IN-01', title: 'Registration & verification', rationale: 'Driver identity through Nafath and Absher, company commercial record through Wathq. Fake postings and unlicensed drivers never enter the pool.' },
   { id: 'IN-02', title: 'Job management', rationale: 'Companies post the details that actually decide a match: licence class, vehicle category, route, salary, benefits, working hours.' },
-  { id: 'IN-03', title: 'Search & matching', rationale: 'Filter by licence type, city, experience and vehicle category, on both sides of the market.' },
+  { id: 'IN-03', title: 'Search & matching', rationale: 'Filter jobs by licence type, location, experience and vehicle category.' },
   { id: 'IN-04', title: 'Application tracking', rationale: 'Drivers save jobs, get notifications, and see application state. Companies manage candidates in one pipeline.' },
   { id: 'IN-05', title: 'Mutual reviews', rationale: 'Companies rate drivers, drivers rate companies. The information asymmetry works in both directions, so the fix has to as well.' },
-  { id: 'IN-06', title: 'Multilingual interface', rationale: 'Arabic and English across web and app, because the driver workforce in the Kingdom is not monolingual.' },
+  { id: 'IN-06', title: 'Multilingual interface', rationale: 'Website and app offered in multiple languages, so everyone can use them easily.' },
 ];
 
 export const SCOPE_IN: ScopeItem[] = [
