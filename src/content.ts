@@ -78,15 +78,16 @@ export const EFFECT: string[] = [
 ];
 
 export const PRIMARY_USERS: Pain[] = [
-  { who: 'Drivers', text: 'Truck, bus, parcel-delivery, private and commercial drivers holding a valid Saudi licence. They search, save, apply and track from the mobile app.' },
-  { who: 'Recruiters', text: 'Hiring staff and fleet managers at transport, delivery and logistics companies. They post vacancies, filter, and manage candidates on the website.' },
-  { who: 'Small firms', text: 'Establishments with no HR department and no recruitment budget, currently limited to their own contacts.' },
+  { who: 'Drivers', text: 'Professional, legally licensed truck, bus, parcel-delivery, private and commercial drivers. They search vacancies, save jobs, apply, and track their applications.' },
+  { who: 'Recruiters', text: 'Company recruiters at transport, delivery and logistics firms. They post vacancies with salary and benefits, filter candidates, and manage their applicants.' },
+  { who: 'Establishments', text: 'Companies and establishments that hire today through relationship networks, their own website, or paid recruitment advertisements.' },
 ];
 
 export const STAKEHOLDERS: Pain[] = [
-  { who: 'HRSD', text: 'Ministry of Human Resources and Social Development. Licenses employment mediation platforms, and benefits from local hiring over overseas recruitment.' },
-  { who: 'TGA', text: 'Transport General Authority. Sets Saudization rules, unified driver status, and operating licence conditions the platform must respect.' },
-  { who: 'Providers', text: 'Nafath and Absher for identity, Wathq for commercial records, SMS gateways, payment gateway, cloud host. Dependencies, not customers.' },
+  { who: 'HRSD', text: 'Ministry of Human Resources and Social Development. Its approval is required to operate an employment portal or mediation platform, and the portal must abide by its conditions and policies.' },
+  { who: 'Commerce', text: 'Ministry of Commerce. Its approval is also required, and its Wathq API supplies the verified commercial records that keep fake companies off the platform.' },
+  { who: 'TGA', text: 'Transport General Authority. Sets the Saudization rules, unified driver status and operating licence standards the platform must adhere to.' },
+  { who: 'Providers', text: 'Nafath and Absher for credentials, telecom and SMS gateways, a payment gateway, local cloud hosting, and security certificates. External dependencies, not customers.' },
 ];
 
 export const GOAL =
