@@ -1,10 +1,8 @@
-import SignPanel from '../components/SignPanel';
 import { FEATURES } from '../content';
 
 export default function Solution() {
   return (
     <>
-      <SignPanel number={6} arabic="ما هو الحل المقترح؟" english="What are we proposing?" />
       <h2>One verified platform, on web and mobile.</h2>
       <p className="lede">
         Website and mobile application run on one database and backend, so a vacancy posted by a

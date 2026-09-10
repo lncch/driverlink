@@ -16,8 +16,8 @@ export default function App() {
     <>
       {/* Every slide stays mounted so Cmd-P prints the whole deck. */}
       <div className="deck">
-        {SLIDES.map(({ Body, label }, n) => (
-          <Slide key={label} active={n === index}>
+        {SLIDES.map(({ Body, label, sign }, n) => (
+          <Slide key={label} active={n === index} number={n + 1} sign={sign}>
             <Body />
           </Slide>
         ))}

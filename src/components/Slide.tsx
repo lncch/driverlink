@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, type ReactNode } from 'react';
+import SignPanel from './SignPanel';
 
 /** Below this, shrinking hurts more than scrolling would. */
 const MIN_SCALE = 0.52;
@@ -7,6 +8,9 @@ const MAX_SCALE = 1.34;
 
 interface Props {
   active: boolean;
+  /** 1-based slide number, shown on the sign. */
+  number: number;
+  sign?: { arabic: string; english: string };
   children: ReactNode;
 }
 
@@ -19,7 +23,7 @@ interface Props {
  * scaled measure rather than being stretched, which is why the height is
  * measured a second time once the width has changed.
  */
-export default function Slide({ active, children }: Props) {
+export default function Slide({ active, number, sign, children }: Props) {
   const frame = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
 
@@ -70,9 +74,13 @@ export default function Slide({ active, children }: Props) {
 
   return (
     <section className={active ? 'slide on' : 'slide'} aria-hidden={!active}>
-      <div className="frame" ref={frame}>
-        <div className="body" ref={body}>
-          {children}
+      <div className="frame">
+        {/* Outside the fit box, so the sign is the same size on every slide. */}
+        {sign && <SignPanel number={number} arabic={sign.arabic} english={sign.english} />}
+        <div className="fitbox" ref={frame}>
+          <div className="body" ref={body}>
+            {children}
+          </div>
         </div>
       </div>
     </section>

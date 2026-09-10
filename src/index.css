@@ -132,9 +132,11 @@ body{
 .slide.on{display:block;animation:rise .34s cubic-bezier(.2,.7,.3,1) both}
 .frame{
   height:100%;width:100%;max-width:1460px;margin:0 auto;
-  display:block;
+  display:flex;flex-direction:column;gap:clamp(15px,1.9vw,28px);
   overflow:hidden;
 }
+/* the sign sits above this and keeps its own size; only what is inside scales */
+.fitbox{flex:1;min-height:0;overflow:hidden}
 .body{
   display:flex;flex-direction:column;
   gap:clamp(15px,1.9vw,28px);
