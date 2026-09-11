@@ -78,8 +78,8 @@ export const EFFECT: string[] = [
 ];
 
 export const PRIMARY_USERS: Pain[] = [
-  { who: 'Drivers', text: 'Professional, legally licensed truck, bus, parcel-delivery, private and commercial drivers. They search vacancies, save jobs, apply, and track their applications.' },
-  { who: 'Recruiters', text: 'Company recruiters at transport, delivery and logistics firms. They post vacancies with salary and benefits, filter candidates, and manage their applicants.' },
+  { who: 'Drivers', text: 'Professional, legally licensed truck, bus, parcel-delivery, private and commercial drivers. They publish a verified profile, search vacancies, apply, and track their applications.' },
+  { who: 'Recruiters', text: 'Company recruiters at transport, delivery and logistics firms. They search driver profiles, post vacancies with salary and benefits, and manage their applicants.' },
   { who: 'Establishments', text: 'Companies and establishments that hire today through relationship networks, their own website, or paid recruitment advertisements.' },
 ];
 
@@ -108,18 +108,18 @@ export const OBJECTIVES: Objective[] = [
 ];
 
 export const FEATURES: Feature[] = [
-  { id: 'IN-01', title: 'Registration & verification', rationale: 'Driver identity through Nafath and Absher, company commercial record through Wathq. Fake postings and unlicensed drivers never enter the pool.' },
+  { id: 'IN-01', title: 'Verified profiles', rationale: 'Drivers publish a profile with licence class, vehicle categories and experience, checked through Nafath and Absher. Company records are checked through Wathq.' },
   { id: 'IN-02', title: 'Job management', rationale: 'Companies post the details that actually decide a match: licence class, vehicle category, route, salary, benefits, working hours.' },
-  { id: 'IN-03', title: 'Search & matching', rationale: 'Filter jobs by licence type, location, experience and vehicle category.' },
+  { id: 'IN-03', title: 'Search & matching', rationale: 'Companies search driver profiles by licence type, location, experience and vehicle category. Drivers filter vacancies the same way.' },
   { id: 'IN-04', title: 'Application tracking', rationale: 'Drivers save jobs, get notifications, and see application state. Companies manage candidates in one pipeline.' },
   { id: 'IN-05', title: 'Mutual reviews', rationale: 'Companies rate drivers, drivers rate companies. The information asymmetry works in both directions, so the fix has to as well.' },
   { id: 'IN-06', title: 'Multilingual interface', rationale: 'Website and app offered in multiple languages, so everyone can use them easily.' },
 ];
 
 export const SCOPE_IN: ScopeItem[] = [
-  { id: 'IN-01', label: 'Profiles, ID and document verification' },
+  { id: 'IN-01', label: 'Verified driver and company profiles' },
   { id: 'IN-02', label: 'Vacancy posting and management' },
-  { id: 'IN-03', label: 'Search, filtering and job matching' },
+  { id: 'IN-03', label: 'Search and matching, both directions' },
   { id: 'IN-04', label: 'Applications, saved jobs, notifications' },
   { id: 'IN-05', label: 'Mutual review and rating' },
   { id: 'IN-06', label: 'Multilingual web and mobile interfaces' },
