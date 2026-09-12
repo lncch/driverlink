@@ -205,12 +205,16 @@ td.m{color:var(--muted)}
 .feat p{font-size:13.5px;line-height:1.55;color:var(--muted)}
 
 /* ---------- goal ---------- */
+/* The sign panel above is already a green fill, so the goal takes slide 2's
+   quote treatment instead: the green stays as a rule, the display serif and
+   the size carry the weight. */
 .goal{
-  background:var(--panel-fill);color:var(--on-sign);
-  padding:clamp(14px,1.7vw,24px) clamp(18px,2.2vw,30px);border-radius:7px;
+  background:var(--surface);color:var(--ink);
+  border-inline-start:5px solid var(--green-line);
+  padding:clamp(16px,1.9vw,26px) clamp(20px,2.4vw,32px);
   font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
   font-size:clamp(19px,2.1vw,30px);line-height:1.28;letter-spacing:-.018em;
-  max-width:none;box-shadow:var(--panel-shadow);
+  max-width:none;
 }
 
 /* ---------- fishbone ---------- */
