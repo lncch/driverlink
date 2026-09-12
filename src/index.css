@@ -14,55 +14,55 @@
    --------------------------------------------------------------- */
 
 :root{
-  /* The mark's vivid blue is reserved for the mark. Deck chrome sits a step
-     deeper and less saturated so the logo stays the one saturated element;
-     amber is semantic, not brand. */
+  /* Hue does the separating, not saturation: the deck's accents are emerald,
+     so the mark's blue stays the only blue on the page and everything else
+     can stay fully saturated. Amber warns, brick excludes. */
   --logo-blue:#1D4ED8;
 
-  --ground:#EDECEA;
-  --surface:#F7F6F4;
-  --sunk:#E2E0DD;
-  --ink:#201E1D;
-  --muted:#5F5B58;
-  --line:#CDC9C5;
+  --ground:#F1EFEB;
+  --surface:#FBFAF7;
+  --sunk:#E6E2DB;
+  --ink:#1F1D1B;
+  --muted:#635E58;
+  --line:#D6D1CA;
 
-  --sign:#1C2A40;
-  --sign-deep:#121C2B;
-  --on-sign:#F7F8FA;
+  --sign:#075C3B;
+  --sign-deep:#044229;
+  --on-sign:#FBFAF7;
 
-  --accent:#2F4A75;
-  --accent-ink:#2F4A75;
-  --accent-line:#2F4A75;
-  --panel-fill:#1C2A40;
-  --amber:#7A5810;
-  --amber-fill:#F0DFB8;
-  --brick:#94382A;
+  --accent:#0B7A4F;
+  --accent-ink:#0B6B46;
+  --accent-line:#0B7A4F;
+  --panel-fill:#075C3B;
+  --amber:#9A6108;
+  --amber-fill:#F2DFB4;
+  --brick:#A83A24;
 
-  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(32,30,29,.5);
+  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(31,29,27,.45);
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --logo-blue:#1D4ED8;
 
-    --ground:#151414;
-    --surface:#1E1D1C;
-    --sunk:#0F0E0E;
-    --ink:#EDEBE8;
-    --muted:#9C9791;
-    --line:#332F2C;
+    --ground:#141312;
+    --surface:#1E1C1A;
+    --sunk:#0D0C0B;
+    --ink:#EFEDE9;
+    --muted:#A09A93;
+    --line:#35312D;
 
-    --sign:#2A3C5C;
-    --sign-deep:#1C2A40;
-    --on-sign:#F7F8FA;
+    --sign:#0F7A50;
+    --sign-deep:#075C3B;
+    --on-sign:#FBFAF7;
 
-    --accent:#8FA6C8;
-    --accent-ink:#8FA6C8;
-    --accent-line:#8FA6C8;
-    --panel-fill:#1C2A40;
+    --accent:#35C892;
+    --accent-ink:#35C892;
+    --accent-line:#35C892;
+    --panel-fill:#075C3B;
     --amber:#E5B45E;
     --amber-fill:#33290F;
-    --brick:#D4796A;
+    --brick:#E0806F;
 
     --panel-shadow:0 2px 0 var(--sign-deep), 0 12px 30px -20px rgba(0,0,0,.9);
   }
@@ -70,24 +70,24 @@
 :root[data-theme="dark"]{
   --logo-blue:#1D4ED8;
 
-  --ground:#151414;
-  --surface:#1E1D1C;
-  --sunk:#0F0E0E;
-  --ink:#EDEBE8;
-  --muted:#9C9791;
-  --line:#332F2C;
+  --ground:#141312;
+  --surface:#1E1C1A;
+  --sunk:#0D0C0B;
+  --ink:#EFEDE9;
+  --muted:#A09A93;
+  --line:#35312D;
 
-  --sign:#2A3C5C;
-  --sign-deep:#1C2A40;
-  --on-sign:#F7F8FA;
+  --sign:#0F7A50;
+  --sign-deep:#075C3B;
+  --on-sign:#FBFAF7;
 
-  --accent:#8FA6C8;
-  --accent-ink:#8FA6C8;
-  --accent-line:#8FA6C8;
-  --panel-fill:#1C2A40;
+  --accent:#35C892;
+  --accent-ink:#35C892;
+  --accent-line:#35C892;
+  --panel-fill:#075C3B;
   --amber:#E5B45E;
   --amber-fill:#33290F;
-  --brick:#D4796A;
+  --brick:#E0806F;
 
   --panel-shadow:0 2px 0 var(--sign-deep), 0 12px 30px -20px rgba(0,0,0,.9);
 }
