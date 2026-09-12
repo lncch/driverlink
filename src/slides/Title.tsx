@@ -12,13 +12,7 @@ export default function Title() {
         </div>
       </div>
 
-      <h1>Hiring a driver shouldn't<br />depend on who you know.</h1>
-
-      <p className="lede">
-        A recruitment and professional networking platform connecting professional and legal
-        drivers with companies looking for drivers. Website and mobile application, sharing one
-        database and backend. Saudi Arabia initially.
-      </p>
+      <h1>Your Next Opportunity.<br />Their Next Driver.</h1>
 
       <div className="team">
         {TEAM.map((m) => (
