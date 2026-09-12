@@ -375,11 +375,6 @@ td.m{color:var(--muted)}
 .closing{justify-content:center;gap:clamp(18px,2.2vw,30px);align-items:flex-start}
 /* an svg with width:auto stretches to the column, which centred the mark */
 .closing .mark{height:clamp(58px,6.4vw,98px);align-self:flex-start}
-.closing-ar{
-  font-size:clamp(17px,1.7vw,24px);color:var(--muted);
-  align-self:flex-start;
-  margin-top:calc(clamp(18px,2.2vw,30px) * -0.5);
-}
 /* the one full-width row opts back in */
 .closing .closing-team{align-self:stretch}
 .closing-team{

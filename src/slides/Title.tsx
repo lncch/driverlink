@@ -24,8 +24,8 @@ export default function Title() {
       </div>
 
       <div className="credits">
-        <span>Software Engineering group project, Presentation 1</span>
-        <span>Dr. Abdulaziz Attaallah, 13 September 2026</span>
+        <span>Software Engineering group project</span>
+        <span>Dr. Abdulaziz Attaallah</span>
       </div>
     </div>
   );
