@@ -1,14 +1,11 @@
 import { TEAM } from '../content';
-import mark from '../assets/hirewheel-mark.svg';
+import Mark from '../components/Mark';
 
 export default function Title() {
   return (
     <div className="title-wrap">
       <div className="brandrow">
-        {/* White ring needs a dark ground, so the mark rides its own navy tile. */}
-        <span className="marktile">
-          <img src={mark} alt="" width={48} height={48} />
-        </span>
+        <Mark />
         <div className="brandname">
           HireWheel
           <span lang="ar" dir="rtl">منصّة توظيف السائقين في السعودية</span>

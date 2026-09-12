@@ -14,61 +14,10 @@
    --------------------------------------------------------------- */
 
 :root{
-  /* The mark's hub is the only green on the page, so the deck goes navy with
-     amber accents. Brick carries the negative: the fishbone's effect box and
-     the excluded-features column. */
-  --logo-green:#19C37D;
+  color-scheme: dark;
 
-  --ground:#F1EFEB;
-  --surface:#FBFAF7;
-  --sunk:#E6E2DB;
-  --ink:#1F1D1B;
-  --muted:#635E58;
-  --line:#D6D1CA;
-
-  --sign:#17233A;
-  --sign-deep:#0E1626;
-  --on-sign:#FBFAF7;
-
-  --accent:#8A5707;
-  --accent-ink:#8A5707;
-  --accent-line:#8A5707;
-  --panel-fill:#17233A;
-  --amber:#8A5707;
-  --amber-fill:#F2DFB4;
-  --brick:#9A3320;
-
-  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(31,29,27,.45);
-}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --logo-green:#19C37D;
-
-    --ground:#141312;
-    --surface:#1E1C1A;
-    --sunk:#0D0C0B;
-    --ink:#EFEDE9;
-    --muted:#A09A93;
-    --line:#35312D;
-
-    --sign:#24354F;
-    --sign-deep:#17233A;
-    --on-sign:#FBFAF7;
-
-    --accent:#E5B45E;
-    --accent-ink:#E5B45E;
-    --accent-line:#E5B45E;
-    --panel-fill:#17233A;
-    --amber:#E5B45E;
-    --amber-fill:#33290F;
-    --brick:#E0806F;
-
-    --panel-shadow:0 2px 0 var(--sign-deep), 0 12px 30px -20px rgba(0,0,0,.9);
-  }
-}
-:root[data-theme="dark"]{
-  --logo-green:#19C37D;
+  --mark-ring:#FBFAF7;
+  --mark-hub:#19C37D;
 
   --ground:#141312;
   --surface:#1E1C1A;
@@ -178,14 +127,7 @@ h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-
 /* ---------- title slide ---------- */
 .title-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2.6vw,36px)}
 .brandrow{display:flex;align-items:center;gap:clamp(16px,1.8vw,26px)}
-.marktile{
-  display:grid;place-items:center;flex-shrink:0;
-  height:clamp(74px,8.4vw,128px);aspect-ratio:1;
-  background:var(--sign);
-  border-radius:clamp(15px,1.7vw,25px);
-  box-shadow:var(--panel-shadow);
-}
-.marktile img{height:64%;width:auto;display:block}
+.mark{height:clamp(74px,8.4vw,128px);width:auto;display:block;flex-shrink:0}
 .brandname{
   font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
   font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.018em;
@@ -306,6 +248,8 @@ td.m{color:var(--muted)}
 }
 
 @media print{
+  :root{--mark-ring:#1F1D1B;--ink:#141312;--muted:#55504B;--line:#C8C3BC;
+        --surface:#F4F2EE;--sunk:#E6E2DB;--accent-ink:#8A5707;--accent-line:#8A5707}
   .bar,.hint{display:none}
   .slide{display:flex!important;break-after:page;min-height:auto;padding:26px;animation:none}
   body{background:#fff;color:#000}
