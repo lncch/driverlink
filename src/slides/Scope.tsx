@@ -24,15 +24,17 @@ export default function Scope() {
         </div>
         <div className="out">
           <h3>Outside the boundary</h3>
-          {SCOPE_OUT.map((s) => (
-            <div className="item" key={s.id}>
-              <span className="k">{s.id}</span>
-              <span>
-                {s.label}
-                {s.reason && <span className="d">{s.reason}</span>}
-              </span>
-            </div>
-          ))}
+          {/* Same card treatment as the features on slide 6: the four
+              exclusions already carry an id, a title and a reason. */}
+          <div className="feat out-cards">
+            {SCOPE_OUT.map((s) => (
+              <article key={s.id}>
+                <span className="k">{s.id}</span>
+                <h3>{s.label}</h3>
+                <p>{s.reason}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </>
