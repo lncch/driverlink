@@ -124,14 +124,6 @@ export const SCOPE_OUT: ScopeItem[] = [
   { id: 'EX-04', label: 'Live GPS vehicle tracking', reason: 'A fleet management feature, outside the recruitment scope' },
 ];
 
-/** The five activities section 1.6 puts inside the hiring process. */
-export const HIRING_STEPS: string[] = [
-  'Creating personal profiles',
-  'Verifying identity and documents',
-  'Advertising the vacancy and attracting candidates',
-  'Matching the requirements of the parties',
-  'Providing feedback',
-];
 
 export const CLOSING: Pain[] = [
   { who: 'Assumed', text: 'Drivers, companies and establishments will entrust their credentials to the portal; companies will pay for access to job postings; drivers are literate and fill out the forms themselves.' },

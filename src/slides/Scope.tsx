@@ -1,26 +1,13 @@
-import { SCOPE_OUT, HIRING_STEPS } from '../content';
+import { SCOPE_OUT } from '../content';
 
 export default function Scope() {
   return (
     <>
       <h2>An intermediate between drivers and companies, nothing more.</h2>
 
-      {/* Section 1.6's sentence, with the chips completing it. */}
-      <div className="leadin">
-        <p className="lede">
-          The project will focus exclusively on the hiring process, which involves:
-        </p>
-        <div className="steps">
-          {HIRING_STEPS.map((step, i) => (
-            <span className="step" key={step}>
-              <b>{i + 1}</b>{step}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Only the exclusions. The included features are slide 6, with the
-          same IN-01..IN-06 codes, so listing them again said nothing new. */}
+      {/* Only the exclusions. Everything in scope is slide 6: its six cards
+          carry the same IN-01..IN-06 codes, and section 1.6's five hiring
+          activities all map onto them, so either list only repeated it. */}
       <div className="featblock">
         <h3 className="seclabel out">Excluded features</h3>
         <div className="feat out-cards">
