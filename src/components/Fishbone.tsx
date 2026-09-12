@@ -26,7 +26,7 @@ export default function Fishbone() {
           fill="currentColor"
         />
 
-        <rect x={1330} y={252} width={320} height={186} rx={7} fill="#9A3320" stroke="#6E2415" strokeWidth={2} />
+        <rect x={1330} y={252} width={320} height={186} rx={7} fill="#8E3A2C" stroke="#5E241A" strokeWidth={2} />
         {EFFECT.map((line, i) => (
           <text
             key={line}

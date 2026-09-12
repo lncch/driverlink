@@ -16,27 +16,32 @@
 :root{
   color-scheme: dark;
 
-  --mark-ring:#FBFAF7;
+  /* Green is the primary. The mark's hub is the brightest green on the page
+     (luminance .41); graphic green sits below it (.26) and the panels well
+     below (.10), so the logo still leads. Amber and coral are the secondaries:
+     amber carries data accents, coral carries the negative. */
+  --mark-ring:#F2FBF6;
   --mark-hub:#19C37D;
 
-  --ground:#141312;
-  --surface:#1E1C1A;
-  --sunk:#0D0C0B;
-  --ink:#EFEDE9;
-  --muted:#A09A93;
-  --line:#35312D;
+  --ground:#101413;
+  --surface:#172020;
+  --sunk:#0A0D0C;
+  --ink:#E8EFEA;
+  --muted:#93A39A;
+  --line:#27332E;
 
-  --sign:#24354F;
-  --sign-deep:#17233A;
-  --on-sign:#FBFAF7;
+  --sign:#0F7050;
+  --sign-deep:#0A4E37;
+  --on-sign:#F2FBF6;
 
-  --accent:#E5B45E;
-  --accent-ink:#E5B45E;
-  --accent-line:#E5B45E;
-  --panel-fill:#17233A;
-  --amber:#E5B45E;
+  --green-line:#2E9E72;
+  --accent:#E8B765;
+  --accent-ink:#E8B765;
+  --accent-line:#2E9E72;
+  --panel-fill:#0F7050;
+  --amber:#E8B765;
   --amber-fill:#33290F;
-  --brick:#E0806F;
+  --brick:#E8897A;
 
   --panel-shadow:0 2px 0 var(--sign-deep), 0 12px 30px -20px rgba(0,0,0,.9);
 }
@@ -179,7 +184,7 @@ td.m{color:var(--muted)}
 /* ---------- scope ---------- */
 .scope{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(16px,2vw,30px)}
 .scope h3{font-size:17px;margin-bottom:8px}
-.scope .in h3{color:var(--accent-line)}
+.scope .in h3{color:var(--green-line)}
 .scope .out h3{color:var(--brick)}
 .item{display:flex;gap:13px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
 .item .k{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:14px;
@@ -221,15 +226,15 @@ td.m{color:var(--muted)}
   border-top:1px solid var(--line);backdrop-filter:blur(9px);
   display:flex;align-items:center;gap:18px;padding:9px clamp(16px,3vw,30px);
 }
-.lane{position:absolute;top:-1px;inset-inline-start:0;height:3px;background:var(--accent-line);transition:width .3s cubic-bezier(.2,.7,.3,1)}
+.lane{position:absolute;top:-1px;inset-inline-start:0;height:3px;background:var(--sign);transition:width .3s cubic-bezier(.2,.7,.3,1)}
 .dots{display:flex;gap:6px}
 .dots button{
   width:10px;height:10px;padding:0;border-radius:50%;
   border:1px solid var(--line);background:transparent;cursor:pointer;
   transition:background .18s, border-color .18s;
 }
-.dots button:hover{border-color:var(--accent-line)}
-.dots button[aria-current="true"]{background:var(--accent-line);border-color:var(--accent-line)}
+.dots button:hover{border-color:var(--green-line)}
+.dots button[aria-current="true"]{background:var(--green-line);border-color:var(--green-line)}
 .where{font-size:13.5px;color:var(--muted)}
 .count{
   font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
@@ -248,8 +253,9 @@ td.m{color:var(--muted)}
 }
 
 @media print{
-  :root{--mark-ring:#1F1D1B;--ink:#141312;--muted:#55504B;--line:#C8C3BC;
-        --surface:#F4F2EE;--sunk:#E6E2DB;--accent-ink:#8A5707;--accent-line:#8A5707}
+  :root{--mark-ring:#141413;--ink:#121514;--muted:#4E5854;--line:#C6CEC9;
+        --surface:#F3F7F4;--sunk:#E4EAE6;--accent-ink:#7D4F06;
+        --accent-line:#0A4E37;--green-line:#0A4E37;--brick:#8E3A2C}
   .bar,.hint{display:none}
   .slide{display:flex!important;break-after:page;min-height:auto;padding:26px;animation:none}
   body{background:#fff;color:#000}
@@ -263,7 +269,7 @@ td.m{color:var(--muted)}
   background:var(--surface);color:var(--muted);cursor:pointer;
   transition:color .16s, border-color .16s;
 }
-.icon:hover{color:var(--ink);border-color:var(--accent-line)}
+.icon:hover{color:var(--ink);border-color:var(--green-line)}
 
 .scrim{
   position:fixed;inset:0;z-index:40;display:grid;place-items:center;
@@ -334,7 +340,7 @@ td.m{color:var(--muted)}
   opacity:.55;transition:opacity .16s, color .16s;pointer-events:none;
 }
 .expandable:hover .hint-expand,
-.expandable:focus-visible .hint-expand{opacity:1;color:var(--accent-line)}
+.expandable:focus-visible .hint-expand{opacity:1;color:var(--green-line)}
 
 .scrim.expanded{padding:12px;align-items:center}
 .expanded-inner{
