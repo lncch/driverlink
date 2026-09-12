@@ -94,9 +94,6 @@ export const STAKEHOLDERS: Pain[] = [
 export const GOAL =
   'Connect companies that need professional drivers with those already in Saudi Arabia, through a trusted platform.';
 
-/** The report's long-term half of the goal, section 1.6. */
-export const GOAL_LONG =
-  'In the long term, HireWheel aims to raise the driving and transport professions in Saudi Arabia to a world-class level. A clear and fast hiring system should naturally increase driver wages, help improve industry rules, and build a work environment matching the professional standards of the UK, US and EU.';
 
 export const OBJECTIVES: Objective[] = [
   { id: 'OBJ-1', objective: 'To provide a specialized employment platform for professional drivers.', indicator: 'Increase in the total number of active driver profiles and establishments registering on the platform.' },

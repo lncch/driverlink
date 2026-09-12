@@ -1,13 +1,10 @@
 import Expandable from '../components/Expandable';
-import { GOAL, GOAL_LONG, OBJECTIVES } from '../content';
+import { GOAL, OBJECTIVES } from '../content';
 
 export default function Goal() {
   return (
     <>
-      <div className="goalrow">
-        <div className="goal">{GOAL}</div>
-        <p className="goal-long">{GOAL_LONG}</p>
-      </div>
+      <div className="goal">{GOAL}</div>
       <Expandable label="the objectives table">
         <div className="tbl-wrap">
         <table>
