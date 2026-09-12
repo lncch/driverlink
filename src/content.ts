@@ -116,14 +116,6 @@ export const FEATURES: Feature[] = [
   { id: 'IN-06', title: 'Multilingual interfaces', rationale: 'Providing the website and application in multiple languages.' },
 ];
 
-export const SCOPE_IN: ScopeItem[] = [
-  { id: 'IN-01', label: 'User registration and verification' },
-  { id: 'IN-02', label: 'Job management' },
-  { id: 'IN-03', label: 'Search and job matching' },
-  { id: 'IN-04', label: 'Application tracking' },
-  { id: 'IN-05', label: 'Mutual review system' },
-  { id: 'IN-06', label: 'Multilingual interfaces' },
-];
 
 export const SCOPE_OUT: ScopeItem[] = [
   { id: 'EX-01', label: 'Overseas recruitment', reason: 'Only drivers already residing in Saudi Arabia, to avoid complicated processes' },
