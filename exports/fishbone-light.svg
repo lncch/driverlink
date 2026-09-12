@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="570" viewBox="0 0 1660 570">
+<svg xmlns="http://www.w3.org/2000/svg" width="1615" height="612" viewBox="0 0 1615 612">
 <title>Fishbone cause and effect diagram for the HireWheel problem: six cause categories feeding one effect</title>
-<rect x="0" y="0" width="1660" height="570" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1615" height="612" fill="#FFFFFF"/>
+<g transform="translate(-62.5,20.6)">
 <line x1="90" y1="285" x2="1290" y2="285" stroke="#121514" stroke-width="3"/>
 <polygon points="1290,273 1318,285 1290,297" fill="#121514"/>
 <rect x="1330" y="192" width="320" height="186" rx="7" fill="#8E3A2C" stroke="#5E241A" stroke-width="2"/>
@@ -56,4 +57,5 @@
 <text x="1018.3" y="400.8" font-size="16.5" fill="#121514" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Saudization targets unmet</text>
 <line x1="1039.0" y1="334.0" x2="1050.0" y2="334.0" stroke="#BFC8C3" stroke-width="2"/>
 <text x="1057.0" y="339.5" font-size="16.5" fill="#121514" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Residency transfer complications</text>
+</g>
 </svg>
