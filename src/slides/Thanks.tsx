@@ -16,10 +16,6 @@ export default function Thanks() {
           <span key={m.name}>{m.name}</span>
         ))}
       </div>
-
-      <div className="credits">
-        <span>The slides stay online at lncch.github.io/swe-project</span>
-      </div>
     </div>
   );
 }
