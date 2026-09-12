@@ -8,7 +8,7 @@ export default function Title() {
         <Mark />
         <div className="brandname">
           HireWheel
-          <span lang="ar" dir="rtl">منصّة توظيف السائقين في السعودية</span>
+          <span lang="ar" dir="rtl">منصة توظيف السائقين المحترفين</span>
         </div>
       </div>
 
