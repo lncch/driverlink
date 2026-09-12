@@ -1,13 +1,13 @@
 import { TEAM } from '../content';
-import mark from '../assets/logo-mark.png';
+import mark from '../assets/hirewheel-mark.svg';
 
 export default function Title() {
   return (
     <div className="title-wrap">
       <div className="brandrow">
-        <img className="mark" src={mark} alt="" width={512} height={468} />
+        <img className="mark" src={mark} alt="" width={48} height={48} />
         <div className="brandname">
-          DriverLink
+          HireWheel
           <span lang="ar" dir="rtl">منصّة توظيف السائقين في السعودية</span>
         </div>
       </div>
@@ -15,9 +15,9 @@ export default function Title() {
       <h1>Hiring a driver shouldn't<br />depend on who you know.</h1>
 
       <p className="lede">
-        A recruitment platform connecting licensed professional drivers already living in
-        Saudi Arabia with the companies that need them. Website and mobile application on
-        one shared database.
+        A recruitment and professional networking platform connecting professional and legal
+        drivers with companies looking for drivers. Website and mobile application, sharing one
+        database and backend. Saudi Arabia initially.
       </p>
 
       <div className="team">

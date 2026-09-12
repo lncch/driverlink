@@ -16,7 +16,7 @@ export default function Fishbone() {
     <div className="fish">
       <svg viewBox="0 60 1660 570" role="img" aria-labelledby="fb-title">
         <title id="fb-title">
-          Fishbone cause and effect diagram for the DriverLink problem, with six cause
+          Fishbone cause and effect diagram for the HireWheel problem, with six cause
           categories feeding one effect
         </title>
 
@@ -26,7 +26,7 @@ export default function Fishbone() {
           fill="currentColor"
         />
 
-        <rect x={1330} y={252} width={320} height={186} rx={7} fill="var(--brand-amber)" stroke="var(--sign-deep)" strokeWidth={2} />
+        <rect x={1330} y={252} width={320} height={186} rx={7} fill="#D9A33C" stroke="var(--sign-deep)" strokeWidth={2} />
         {EFFECT.map((line, i) => (
           <text
             key={line}
@@ -34,7 +34,7 @@ export default function Fishbone() {
             y={298 + i * 32}
             fontSize={21}
             fontWeight={600}
-            fill="var(--brand-navy)"
+            fill="#201E1D"
           >
             {line}
           </text>
@@ -47,13 +47,13 @@ export default function Fishbone() {
           const tipY = above ? TIP_Y_ABOVE : TIP_Y_BELOW;
           return (
             <g key={cause.category}>
-              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--road)" strokeWidth={2.5} />
+              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--accent-line)" strokeWidth={2.5} />
               <text
                 x={tipX}
                 y={above ? tipY - 17 : tipY + 30}
                 fontSize={22}
                 fontWeight={700}
-                fill="var(--road)"
+                fill="var(--accent-line)"
                 fontFamily="Archivo, Arial, sans-serif"
                 fontStretch="112%"
               >

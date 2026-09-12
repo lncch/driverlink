@@ -3,12 +3,11 @@ import { FEATURES } from '../content';
 export default function Solution() {
   return (
     <>
-      <h2>Drivers make themselves findable. Companies go looking.</h2>
+      <h2>One platform, on web and mobile.</h2>
       <p className="lede">
-        A driver publishes one verified profile carrying licence class, vehicle categories and
-        experience. Companies search that pool and approach the drivers they want, and post
-        vacancies drivers can find and apply to. Web and mobile run on one database, so both
-        sides always see the same thing.
+        The website targets drivers and company recruiters. The mobile application gives drivers
+        easy access to vacancies, applications, notifications and saved jobs. Both use the same
+        database and backend services, so each side sees the same data.
       </p>
       <div className="feat">
         {FEATURES.map((f) => (

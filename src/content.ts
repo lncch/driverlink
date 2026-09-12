@@ -36,27 +36,27 @@ export interface Cause {
 }
 
 export const TEAM: Member[] = [
-  { name: 'Almoayyad Abuljdail', role: 'Team leader · organization, slides, integration' },
-  { name: 'Ibrahim Alyami', role: 'Problem, objectives, root causes, constraints' },
-  { name: 'Elyas Babour', role: 'Goal, system boundary, scope' },
+  { name: 'Almoayyad Abuljdail', role: 'Team leader · organization, slides, integration, submission' },
+  { name: 'Elyas Babour', role: 'Goals, system boundary, included and excluded features' },
+  { name: 'Ibrahim Alyami', role: 'Problem, objectives, root causes, assumptions, constraints' },
   { name: 'Mohammed Al Ghalib', role: 'Identification, introduction, proposed system' },
 ];
 
 export const PROBLEM_PAINS: Pain[] = [
   {
     who: 'Drivers',
-    text: 'A driver whose contract just ended has no pipeline. Postings are scattered and disorganised, so they lose weeks to a search with no visibility into salary, route type, or housing before they commit.',
-    stress: 'no visibility into salary, route type, or housing',
+    text: 'Finding a suitable job after a contract ends is difficult, and disorganized job postings mean a driver spends longer looking. Vacancies rarely say enough about needs, experience, location or salary to judge.',
+    stress: 'disorganized job postings',
   },
   {
     who: 'Companies',
-    text: 'Transport, delivery and logistics firms hire through personal networks, their own website, or a paid advertisement. That costs time, money and effort, and still does not reach the right candidate.',
-    stress: 'time, money and effort',
+    text: 'Hiring runs on relationship networks, a company website, or an advertisement medium. That requires more time, money and effort, and may lead to inappropriate hiring.',
+    stress: 'more time, money and effort',
   },
   {
-    who: 'Result',
-    text: 'Vacancies stay open, qualified drivers already in the Kingdom stay unemployed, and companies fall back on recruiting from outside Saudi Arabia instead.',
-    stress: 'recruiting from outside Saudi Arabia',
+    who: 'Both sides',
+    text: 'Existing platforms provide little to no detail about the drivers, and drivers have little to no information about the company. Neither side can judge the other.',
+    stress: 'little to no detail about the drivers',
   },
 ];
 
@@ -78,24 +78,24 @@ export const EFFECT: string[] = [
 ];
 
 export const PRIMARY_USERS: Pain[] = [
-  { who: 'Drivers', text: 'Professional, legally licensed truck, bus, parcel-delivery, private and commercial drivers. They publish a verified profile, search vacancies, apply, and track their applications.' },
-  { who: 'Recruiters', text: 'Company recruiters at transport, delivery and logistics firms. They search driver profiles, post vacancies with salary and benefits, and manage their applicants.' },
-  { who: 'Establishments', text: 'Companies and establishments that hire today through relationship networks, their own website, or paid recruitment advertisements.' },
+  { who: 'Drivers', text: 'Professional and legal drivers across several professions: truck, parcel-delivery, bus, private and commercial. The mobile application gives them vacancies, applications, notifications and saved jobs.' },
+  { who: 'Recruiters', text: 'Company recruiters, who the website targets alongside drivers. They publish job characteristics, compensation and benefits, and manage the candidates.' },
+  { who: 'Establishments', text: 'Companies and establishments that hire today through relationship networks, their own website, or a recruitment announcement.' },
 ];
 
 export const STAKEHOLDERS: Pain[] = [
   { who: 'HRSD', text: 'Ministry of Human Resources and Social Development. Its approval is required to operate an employment portal or mediation platform, and the portal must abide by its conditions and policies.' },
-  { who: 'Commerce', text: 'Ministry of Commerce. Its approval is also required, and its Wathq API supplies the verified commercial records that keep fake companies off the platform.' },
+  { who: 'Commerce', text: 'Ministry of Commerce. Its approval is also required, and its Wathq API supplies the verified commercial records that prevent fake companies from signing up.' },
   { who: 'TGA', text: 'Transport General Authority. Sets the Saudization rules, unified driver status and operating licence standards the platform must adhere to.' },
   { who: 'Providers', text: 'Nafath and Absher for credentials, telecom and SMS gateways, a payment gateway, local cloud hosting, and security certificates. External dependencies, not customers.' },
 ];
 
 export const GOAL =
-  'Connect companies that need professional drivers with those already in Saudi Arabia, through one trusted platform.';
+  'Connect companies that need professional drivers with those already in Saudi Arabia, through a trusted platform.';
 
 /** The report's long-term half of the goal, section 1.6. */
 export const GOAL_LONG =
-  'In the long term, DriverLink aims to raise the driving and transport professions in Saudi Arabia to a world-class level. A clear, fast hiring system should raise driver wages, improve industry rules, and build a work environment matching the professional standards of the UK, US and EU.';
+  'In the long term, HireWheel aims to raise the driving and transport professions in Saudi Arabia to a world-class level. A clear and fast hiring system should naturally increase driver wages, help improve industry rules, and build a work environment matching the professional standards of the UK, US and EU.';
 
 export const OBJECTIVES: Objective[] = [
   { id: 'OBJ-1', objective: 'To provide a specialized employment platform for professional drivers.', indicator: 'Increase in the total number of active driver profiles and establishments registering on the platform.' },
@@ -108,32 +108,41 @@ export const OBJECTIVES: Objective[] = [
 ];
 
 export const FEATURES: Feature[] = [
-  { id: 'IN-01', title: 'Verified profiles', rationale: 'Drivers publish a profile with licence class, vehicle categories and experience, checked through Nafath and Absher. Company records are checked through Wathq.' },
-  { id: 'IN-02', title: 'Job management', rationale: 'Companies post the details that actually decide a match: licence class, vehicle category, route, salary, benefits, working hours.' },
-  { id: 'IN-03', title: 'Search & matching', rationale: 'Companies search driver profiles by licence type, location, experience and vehicle category. Drivers filter vacancies the same way.' },
-  { id: 'IN-04', title: 'Application tracking', rationale: 'Drivers save jobs, get notifications, and see application state. Companies manage candidates in one pipeline.' },
-  { id: 'IN-05', title: 'Mutual reviews', rationale: 'Companies rate drivers, drivers rate companies. The information asymmetry works in both directions, so the fix has to as well.' },
-  { id: 'IN-06', title: 'Multilingual interface', rationale: 'Website and app offered in multiple languages, so everyone can use them easily.' },
+  { id: 'IN-01', title: 'Registration & verification', rationale: "Checking drivers' IDs and company data to ensure the safety and trustworthiness of the platform." },
+  { id: 'IN-02', title: 'Job management', rationale: 'Enabling companies to publish information on job characteristics, compensation and benefits.' },
+  { id: 'IN-03', title: 'Search & job matching', rationale: 'Filtering jobs according to licence type, location, experience and vehicle category.' },
+  { id: 'IN-04', title: 'Application tracking', rationale: 'Drivers save jobs, track the jobs applied for, and receive notifications, while companies manage the candidates.' },
+  { id: 'IN-05', title: 'Mutual review system', rationale: 'Rating and reviewing the companies and the drivers.' },
+  { id: 'IN-06', title: 'Multilingual interfaces', rationale: 'Providing the website and application in multiple languages.' },
 ];
 
 export const SCOPE_IN: ScopeItem[] = [
-  { id: 'IN-01', label: 'Verified driver and company profiles' },
-  { id: 'IN-02', label: 'Vacancy posting and management' },
-  { id: 'IN-03', label: 'Search and matching, both directions' },
-  { id: 'IN-04', label: 'Applications, saved jobs, notifications' },
-  { id: 'IN-05', label: 'Mutual review and rating' },
-  { id: 'IN-06', label: 'Multilingual web and mobile interfaces' },
+  { id: 'IN-01', label: 'User registration and verification' },
+  { id: 'IN-02', label: 'Job management' },
+  { id: 'IN-03', label: 'Search and job matching' },
+  { id: 'IN-04', label: 'Application tracking' },
+  { id: 'IN-05', label: 'Mutual review system' },
+  { id: 'IN-06', label: 'Multilingual interfaces' },
 ];
 
 export const SCOPE_OUT: ScopeItem[] = [
-  { id: 'EX-01', label: 'Overseas recruitment', reason: 'Kingdom-resident drivers only, to avoid visa and transfer processes' },
-  { id: 'EX-02', label: 'Payroll and HR management', reason: 'No salaries, no shift scheduling after the hire' },
-  { id: 'EX-03', label: 'Signing legal contracts', reason: 'Official employment contracts happen outside the platform' },
-  { id: 'EX-04', label: 'Live GPS vehicle tracking', reason: 'Fleet management, a different product' },
+  { id: 'EX-01', label: 'Overseas recruitment', reason: 'Only drivers already residing in Saudi Arabia, to avoid complicated processes' },
+  { id: 'EX-02', label: 'Payroll and HR management', reason: 'No salary payment, no employee management during shifts' },
+  { id: 'EX-03', label: 'Signing legal contracts', reason: 'Official government contracts are signed outside the app, after a company decides to hire' },
+  { id: 'EX-04', label: 'Live GPS vehicle tracking', reason: 'A fleet management feature, outside the recruitment scope' },
+];
+
+/** The five activities section 1.6 puts inside the hiring process. */
+export const HIRING_STEPS: string[] = [
+  'Creating personal profiles',
+  'Verifying identity and documents',
+  'Advertising the vacancy and attracting candidates',
+  'Matching the requirements of the parties',
+  'Providing feedback',
 ];
 
 export const CLOSING: Pain[] = [
-  { who: 'Known', text: 'Problem, root causes, users, goal, seven measurable objectives, and a scope boundary with four explicit exclusions.' },
-  { who: 'Assumed', text: 'Drivers and companies will trust the platform with their credentials, companies will pay to post, and drivers complete their own forms.' },
-  { who: 'Constrained', text: 'HRSD and Ministry of Commerce approval to operate an employment mediation platform, plus TGA standards and access to Nafath, Absher and Wathq.' },
+  { who: 'Assumed', text: 'Drivers, companies and establishments will entrust their credentials to the portal; companies will pay for access to job postings; drivers are literate and fill out the forms themselves.' },
+  { who: 'Constrained', text: 'Approval from the Ministry of Human Resources and Social Development and the Ministry of Commerce to operate an employing or mediation portal, adherence to HRSD conditions and policies, access to the Absher and Nafath APIs, and strict adherence to Transport General Authority standards.' },
+  { who: 'Dependent on', text: 'Nafath and Absher, telecom and SMS gateways (STC, Mobily, Zain), the Wathq API, local cloud hosting, a payment gateway, and SSL and other security certificates.' },
 ];

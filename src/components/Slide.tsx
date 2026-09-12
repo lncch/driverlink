@@ -40,23 +40,31 @@ export default function Slide({ active, number, sign, children }: Props) {
 
       b.style.transform = 'none';
 
-      // Changing the width re-wraps text and re-proportions the fishbone, which
-      // changes the height, which changes the scale. Iterate to the fixed point.
+      // Settle on a layout width. A narrower body re-wraps text taller, which
+      // asks for a smaller scale, which widens it again, so an undamped step
+      // oscillates instead of converging. The exponent damps it.
       let s = 1;
-      for (let pass = 0; pass < 5; pass += 1) {
+      for (let pass = 0; pass < 6; pass += 1) {
         b.style.width = `${100 / s}%`;
         const h = b.scrollHeight;
         if (!h) return;
-        const next = clamp((availH / h) * 0.985);
-        if (Math.abs(next - s) < 0.004) {
+        const ratio = availH / (s * h);
+        if (Math.abs(ratio - 1) < 0.005) break;
+        const next = clamp(s * Math.pow(ratio, 0.6));
+        if (Math.abs(next - s) < 0.003) {
           s = next;
           break;
         }
         s = next;
       }
 
+      // The width is now fixed, and a transform never changes layout, so this
+      // height is final. Taking the smaller of the two bounds cannot overflow:
+      // width is bounded by s, height by what actually fits.
       b.style.width = `${100 / s}%`;
-      b.style.transform = `scale(${s})`;
+      const settled = b.scrollHeight;
+      const applied = Math.max(MIN_SCALE, Math.min(s, (availH / settled) * 0.99));
+      b.style.transform = `scale(${applied})`;
     };
 
     fit();

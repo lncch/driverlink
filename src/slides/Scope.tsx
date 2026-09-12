@@ -1,9 +1,17 @@
-import { SCOPE_IN, SCOPE_OUT } from '../content';
+import { SCOPE_IN, SCOPE_OUT, HIRING_STEPS } from '../content';
 
 export default function Scope() {
   return (
     <>
-      <h2>DriverLink is a job board. It stops at the hire.</h2>
+      <h2>An intermediate between drivers and companies, nothing more.</h2>
+      <div className="steps">
+        {HIRING_STEPS.map((step, i) => (
+          <span className="step" key={step}>
+            <b>{i + 1}</b>{step}
+          </span>
+        ))}
+      </div>
+
       <div className="scope">
         <div className="in">
           <h3>Inside the boundary</h3>

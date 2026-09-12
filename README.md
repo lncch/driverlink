@@ -1,6 +1,6 @@
-# DriverLink — Phase 1 Presentation
+# HireWheel — Phase 1 Presentation
 
-Presentation 1 (Project Introduction) for the DriverLink group project.
+Presentation 1 (Project Introduction) for the HireWheel group project.
 Software engineering group project, Phase 1.
 
 **Live deck:** https://lncch.github.io/swe-project/
