@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { CAUSES, EFFECT } from '../content';
 
 const SPINE_Y = 345;
@@ -10,69 +11,174 @@ const TIP_Y_ABOVE = 100;
 const TIP_Y_BELOW = 590;
 /** Positions of the three factor labels along each bone. */
 const FACTOR_T = [0.3, 0.55, 0.8];
+const VIEWBOX = { x: 0, y: 60, width: 1660, height: 570 };
+const FOCUS_SCALE = 2.05;
+const EFFECT_INDEX = CAUSES.length;
+
+function focusTransform(index: number): string {
+  if (index < 0) return 'translate(0px, 0px) scale(1)';
+
+  if (index === EFFECT_INDEX) {
+    const centerX = 1490;
+    const centerY = 345;
+    const targetX = VIEWBOX.x + VIEWBOX.width / 2;
+    const targetY = VIEWBOX.y + VIEWBOX.height / 2;
+    const tx = targetX - centerX * FOCUS_SCALE;
+    const ty = targetY - centerY * FOCUS_SCALE;
+
+    return `translate(${tx}px, ${ty}px) scale(${FOCUS_SCALE})`;
+  }
+
+  const above = index < 3;
+  const attachX = ATTACH_X[index % 3];
+  const centerX = attachX - 8;
+  const centerY = above ? 214 : 477;
+  const targetX = VIEWBOX.x + VIEWBOX.width / 2;
+  const targetY = VIEWBOX.y + VIEWBOX.height / 2;
+  const tx = targetX - centerX * FOCUS_SCALE;
+  const ty = targetY - centerY * FOCUS_SCALE;
+
+  return `translate(${tx}px, ${ty}px) scale(${FOCUS_SCALE})`;
+}
 
 export default function Fishbone() {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const [focusIndex, setFocusIndex] = useState(-1);
+  const stageStyle = useMemo(() => ({ transform: focusTransform(focusIndex) }), [focusIndex]);
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Escape') return;
+
+      const root = rootRef.current;
+      if (!root) return;
+
+      const isExpandedDiagram = Boolean(root.closest('.expanded-inner'));
+      const isActiveSlideDiagram = Boolean(root.closest('.slide.on'));
+      if (document.body.dataset.overlay && !isExpandedDiagram) return;
+      if (!isExpandedDiagram && !isActiveSlideDiagram) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setFocusIndex((current) => Math.min(EFFECT_INDEX, current + 1));
+      }
+
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setFocusIndex((current) => Math.max(-1, current - 1));
+      }
+
+      if (e.key === 'Escape' && !document.body.dataset.overlay) {
+        setFocusIndex(-1);
+      }
+    }
+
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  useEffect(() => {
+    const reset = () => setFocusIndex(-1);
+    window.addEventListener('hashchange', reset);
+    return () => window.removeEventListener('hashchange', reset);
+  }, []);
+
   return (
-    <div className="fish">
+    <div
+      ref={rootRef}
+      className={[
+        'fish',
+        focusIndex >= 0 ? 'fish-stepping' : '',
+        focusIndex === EFFECT_INDEX ? 'fish-effect-focused' : '',
+      ].filter(Boolean).join(' ')}
+      data-focus={focusIndex === EFFECT_INDEX ? 'effect' : focusIndex >= 0 ? CAUSES[focusIndex].category : 'full'}
+    >
       <svg viewBox="0 60 1660 570" role="img" aria-labelledby="fb-title">
         <title id="fb-title">
           Fishbone cause and effect diagram for the HireWheel problem, with six cause
           categories feeding one effect
         </title>
 
-        <line x1={SPINE_X0} y1={SPINE_Y} x2={SPINE_X1} y2={SPINE_Y} stroke="currentColor" strokeWidth={3} />
-        <polygon
-          points={`${SPINE_X1},${SPINE_Y - 12} ${SPINE_X1 + 28},${SPINE_Y} ${SPINE_X1},${SPINE_Y + 12}`}
-          fill="currentColor"
-        />
+        <g className="fishbone-stage" style={stageStyle}>
+          <line x1={SPINE_X0} y1={SPINE_Y} x2={SPINE_X1} y2={SPINE_Y} stroke="currentColor" strokeWidth={3} />
+          <polygon
+            points={`${SPINE_X1},${SPINE_Y - 12} ${SPINE_X1 + 28},${SPINE_Y} ${SPINE_X1},${SPINE_Y + 12}`}
+            fill="currentColor"
+          />
 
-        <rect x={1330} y={252} width={320} height={186} rx={7} fill="#8E3A2C" stroke="#5E241A" strokeWidth={2} />
-        {EFFECT.map((line, i) => (
-          <text
-            key={line}
-            x={1356}
-            y={298 + i * 32}
-            fontSize={21}
-            fontWeight={600}
-            fill="#FBFAF7"
-          >
-            {line}
-          </text>
-        ))}
-
-        {CAUSES.map((cause, i) => {
-          const above = i < 3;
-          const attachX = ATTACH_X[i % 3];
-          const tipX = attachX - BONE_RUN;
-          const tipY = above ? TIP_Y_ABOVE : TIP_Y_BELOW;
-          return (
-            <g key={cause.category}>
-              <line x1={tipX} y1={tipY} x2={attachX} y2={SPINE_Y} stroke="var(--accent-line)" strokeWidth={2.5} />
+          <g className={focusIndex === EFFECT_INDEX ? 'fishbone-effect is-active' : 'fishbone-effect'}>
+            <rect x={1330} y={252} width={320} height={186} rx={7} fill="#8E3A2C" stroke="#5E241A" strokeWidth={2} />
+            {EFFECT.map((line, i) => (
               <text
-                x={tipX}
-                y={above ? tipY - 17 : tipY + 30}
-                fontSize={22}
-                fontWeight={700}
-                fill="var(--accent-line)"
+                key={line}
+                x={1356}
+                y={298 + i * 32}
+                fontSize={21}
+                fontWeight={600}
+                fill="#FBFAF7"
               >
-                {cause.category}
+                {line}
               </text>
-              {cause.factors.map((factor, j) => {
-                const t = FACTOR_T[j];
-                const px = tipX + (attachX - tipX) * t;
-                const py = tipY + (SPINE_Y - tipY) * t;
-                return (
-                  <g key={factor}>
-                    <line x1={px} y1={py} x2={px + 11} y2={py} stroke="var(--line)" strokeWidth={2} />
-                    <text x={px + 18} y={py + 5.5} fontSize={16.5} fill="var(--ink)">
-                      {factor}
-                    </text>
-                  </g>
-                );
-              })}
-            </g>
-          );
-        })}
+            ))}
+          </g>
+
+          {CAUSES.map((cause, i) => {
+            const above = i < 3;
+            const attachX = ATTACH_X[i % 3];
+            const tipX = attachX - BONE_RUN;
+            const tipY = above ? TIP_Y_ABOVE : TIP_Y_BELOW;
+            const active = focusIndex === i;
+            const muted = focusIndex >= 0 && !active;
+            const causeClass = [
+              'fishbone-cause',
+              active ? 'is-active' : '',
+              muted ? 'is-muted' : '',
+            ].filter(Boolean).join(' ');
+
+            return (
+              <g key={cause.category} className={causeClass}>
+                <line
+                  className="fishbone-branch"
+                  x1={tipX}
+                  y1={tipY}
+                  x2={attachX}
+                  y2={SPINE_Y}
+                  stroke="var(--accent-line)"
+                  strokeWidth={2.5}
+                />
+                <text
+                  className="fishbone-category"
+                  x={tipX}
+                  y={above ? tipY - 17 : tipY + 30}
+                  fontSize={22}
+                  fontWeight={700}
+                  fill="var(--accent-line)"
+                >
+                  {cause.category}
+                </text>
+                {cause.factors.map((factor, j) => {
+                  const t = FACTOR_T[j];
+                  const px = tipX + (attachX - tipX) * t;
+                  const py = tipY + (SPINE_Y - tipY) * t;
+                  return (
+                    <g key={factor}>
+                      <line x1={px} y1={py} x2={px + 11} y2={py} stroke="var(--line)" strokeWidth={2} />
+                      <text x={px + 18} y={py + 5.5} fontSize={16.5} fill="var(--ink)">
+                        {factor}
+                      </text>
+                    </g>
+                  );
+                })}
+              </g>
+            );
+          })}
+        </g>
+        {focusIndex >= 0 && (
+          <text className="fishbone-step" x={26} y={615}>
+            {focusIndex + 1} / {EFFECT_INDEX + 1}
+          </text>
+        )}
       </svg>
     </div>
   );

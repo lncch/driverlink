@@ -63,12 +63,12 @@ export const PROBLEM_PAINS: Pain[] = [
 
 /** Six bones of the fishbone, in draw order: three above the spine, three below. */
 export const CAUSES: Cause[] = [
-  { category: 'Drivers', factors: ['Rely on word of mouth', 'No pipeline after a contract', 'Cannot compare employers'] },
+  { category: 'Drivers', factors: ['Rely on word of mouth', 'No structured path to next job', 'Cannot compare employers'] },
   { category: 'Companies', factors: ['Hiring by personal networks', 'Ads reach the wrong people', 'Manual CV screening'] },
-  { category: 'Information', factors: ['Licence class never captured', 'Salary and route left vague', 'Experience is free text'] },
-  { category: 'Technology', factors: ['Job boards ignore licences', 'No filter by vehicle category', 'Nothing mobile-first'] },
+  { category: 'Information', factors: ['Licence class never captured', 'Salary and route left vague', 'Disorganized job tasks'] },
+  { category: 'Technology', factors: ['Job boards ignore licences', 'Single-category driver limit', 'No direct driver–company platform'] },
   { category: 'Trust', factors: ['No identity verification', 'No commercial-record check', 'No history on either side'] },
-  { category: 'Market', factors: ['Overseas hiring is default', 'Saudization targets unmet', 'Visa and transfer overhead'] },
+  { category: 'Market', factors: ['Neglecting local driver talent', 'Saudization targets unmet', 'Residency transfer complications'] },
 ];
 
 export const EFFECT: string[] = [
@@ -79,16 +79,14 @@ export const EFFECT: string[] = [
 ];
 
 export const PRIMARY_USERS: Pain[] = [
-  { who: 'Drivers', text: 'Professional and legal drivers across several professions: truck, parcel-delivery, bus, private and commercial. The mobile application gives them vacancies, applications, notifications and saved jobs.' },
-  { who: 'Recruiters', text: 'Company recruiters, who the website targets alongside drivers. They publish job characteristics, compensation and benefits, and manage the candidates.' },
-  { who: 'Establishments', text: 'Companies and establishments that hire today through relationship networks, their own website, or a recruitment announcement.' },
+  { who: 'Drivers', text: 'Professional drivers (truck, parcel delivery, bus, private, and commercial) seeking new job opportunities post-contract. The platform enables them to browse structured vacancies, submit applications, track application status in real-time, and compare employers.' },
+  { who: 'Companies', text: 'Businesses and recruiters transitioning away from traditional word-of-mouth and manual recruitment methods. The platform allows them to publish detailed, searchable job listings and source qualified local drivers within the Kingdom efficiently.' },
 ];
 
 export const STAKEHOLDERS: Pain[] = [
-  { who: 'HRSD', text: 'Ministry of Human Resources and Social Development. Its approval is required to operate an employment portal or mediation platform, and the portal must abide by its conditions and policies.' },
-  { who: 'Commerce', text: 'Ministry of Commerce. Its approval is also required, and its Wathq API supplies the verified commercial records that prevent fake companies from signing up.' },
-  { who: 'TGA', text: 'Transport General Authority. Sets the Saudization rules, unified driver status and operating licence standards the platform must adhere to.' },
-  { who: 'Providers', text: 'Nafath and Absher for credentials, telecom and SMS gateways, a payment gateway, local cloud hosting, and security certificates. External dependencies, not customers.' },
+  { who: 'HRSD & Ministry of Commerce', text: 'HRSD enforces labor laws and Saudization quotas for recruitment, while the Ministry of Commerce validates company commercial records via Wathq to prevent fraudulent registrations.' },
+  { who: 'Transport General Authority (TGA)', text: 'Sets transport standards, unified driver status, professional licensing categories, and commercial vehicle operating regulations.' },
+  { who: 'Service & Integration Providers', text: 'Core third-party services powering national digital identity (Nafath/Absher), SMS gateways, payment processing, and secure local hosting.' },
 ];
 
 export const GOAL =

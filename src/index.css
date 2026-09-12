@@ -155,6 +155,50 @@ h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-
 .pain .txt{font-size:clamp(14px,1.15vw,16.5px);line-height:1.58;max-width:68ch}
 .pain .txt em{font-style:normal;color:var(--ink);font-weight:600;box-shadow:inset 0 -.42em 0 var(--amber-fill)}
 
+/* ---------- users and stakeholders ---------- */
+.audience-map{
+  display:grid;
+  grid-template-columns:minmax(360px,1.15fr) minmax(320px,.85fr);
+  gap:clamp(20px,2.4vw,36px);
+  align-items:start;
+}
+.audience-primary,
+.audience-stakeholders{min-width:0}
+.audience-stack,
+.stakeholder-list{display:flex;flex-direction:column}
+.audience-stack{gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.audience-block{
+  background:var(--surface);
+  padding:clamp(17px,1.8vw,25px) clamp(18px,2vw,28px);
+}
+.audience-who{
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
+  color:var(--accent-line);font-size:clamp(18px,1.55vw,23px);
+  margin-bottom:8px;letter-spacing:0;
+}
+.audience-block p{
+  font-size:clamp(14.5px,1.14vw,16.5px);
+  line-height:1.56;color:var(--ink);max-width:62ch;
+}
+.stakeholder-list{border-block:1px solid var(--line)}
+.stakeholder-row{
+  padding:13px 0 14px;
+  border-top:1px solid var(--line);
+}
+.stakeholder-row:first-child{border-top:0}
+.stakeholder-who{
+  font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;
+  color:var(--brick);font-size:clamp(14.5px,1.06vw,16px);
+  margin-bottom:5px;letter-spacing:0;
+}
+.stakeholder-row p{
+  font-size:clamp(13.5px,1vw,15px);
+  line-height:1.52;color:var(--muted);max-width:54ch;
+}
+@media (max-width:900px){
+  .audience-map{grid-template-columns:1fr}
+}
+
 .quote{
   background:var(--surface);border-inline-start:5px solid var(--sign);
   padding:19px 24px;font-size:clamp(15px,1.25vw,18px);line-height:1.55;max-width:78ch;
@@ -210,9 +254,28 @@ td.m{color:var(--muted)}
 }
 
 /* ---------- fishbone ---------- */
-.fish{overflow-x:auto;flex-shrink:0;background:var(--surface);border:1px solid var(--line);padding:8px}
+.fish{overflow:hidden;flex-shrink:0;background:var(--surface);border:1px solid var(--line);padding:8px}
 .fish svg{display:block;width:100%;height:clamp(280px,54vh,660px)}
 .fish text{font-family:"Thmanyah Sans",sans-serif}
+
+/* Step-through: ArrowDown walks one bone at a time, then the effect box.
+   The stage is what moves, so every label keeps its place on the spine. */
+.fishbone-stage{
+  transform-box:view-box;transform-origin:0 0;
+  transition:transform .68s cubic-bezier(.2,.72,.2,1);
+}
+.fishbone-effect{transition:opacity .24s ease}
+.fish-stepping .fishbone-effect{opacity:.08}
+.fish-effect-focused .fishbone-effect{opacity:1}
+.fishbone-effect.is-active rect{stroke:var(--amber);stroke-width:4}
+.fishbone-cause{transition:opacity .24s ease}
+.fishbone-cause.is-muted{opacity:.16}
+.fishbone-cause.is-active .fishbone-branch{stroke-width:4}
+.fishbone-cause.is-active .fishbone-category{fill:var(--green-line)}
+.fishbone-step{
+  font-size:17px;font-weight:700;fill:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
 
 /* ---------- bottom bar ---------- */
 .bar{
@@ -245,6 +308,7 @@ td.m{color:var(--muted)}
 @media (prefers-reduced-motion: reduce){
   *{transition:none!important}
   .slide.on{animation:none}
+  .fishbone-stage{transition:none!important}
 }
 
 @media print{
