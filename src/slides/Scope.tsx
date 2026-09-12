@@ -15,8 +15,8 @@ export default function Scope() {
 
       {/* Only the exclusions. The included features are slide 6, with the
           same IN-01..IN-06 codes, so listing them again said nothing new. */}
-      <div className="out">
-        <h3>Outside the boundary</h3>
+      <div className="featblock">
+        <h3 className="seclabel out">Excluded features</h3>
         <div className="feat out-cards">
           {SCOPE_OUT.map((s) => (
             <article key={s.id}>

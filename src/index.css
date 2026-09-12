@@ -182,18 +182,20 @@ td.id{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:14p
 td.m{color:var(--muted)}
 
 /* ---------- scope ---------- */
-.out h3{font-size:17px;margin-bottom:8px}
-.out h3{color:var(--brick)}
 .item{display:flex;gap:13px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
 .item .k{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;font-size:14px;
          color:var(--muted);min-width:52px;padding-top:1px}
 .item .d{color:var(--muted);display:block;font-size:13.5px;margin-top:3px;line-height:1.45}
 
-/* the exclusions use slide 6's card treatment; four items fill a 2x2 exactly */
+/* section labels, matching the report's 1.6.1 and 1.6.2 headings */
+.featblock{display:flex;flex-direction:column;gap:9px}
+.seclabel{font-size:17px;font-weight:700}
+.seclabel.in{color:var(--green-line)}
+.seclabel.out{color:var(--brick)}
+
+/* the exclusions use slide 6's card treatment, four across the full width */
 .feat.out-cards{grid-template-columns:repeat(4,1fr)}
 .feat.out-cards .k{color:var(--brick)}
-/* out-rank .out h3, which colours the section heading */
-.out .out-cards h3{color:var(--ink);font-size:17.5px;margin-bottom:0}
 @media (max-width:1100px){.feat.out-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.feat.out-cards{grid-template-columns:1fr}}
 
