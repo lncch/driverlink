@@ -14,10 +14,10 @@
    --------------------------------------------------------------- */
 
 :root{
-  /* Hue does the separating, not saturation: the deck's accents are emerald,
-     so the mark's blue stays the only blue on the page and everything else
-     can stay fully saturated. Amber warns, brick excludes. */
-  --logo-blue:#1D4ED8;
+  /* The mark's hub is the only green on the page, so the deck goes navy with
+     amber accents. Brick carries the negative: the fishbone's effect box and
+     the excluded-features column. */
+  --logo-green:#19C37D;
 
   --ground:#F1EFEB;
   --surface:#FBFAF7;
@@ -26,24 +26,24 @@
   --muted:#635E58;
   --line:#D6D1CA;
 
-  --sign:#075C3B;
-  --sign-deep:#044229;
+  --sign:#17233A;
+  --sign-deep:#0E1626;
   --on-sign:#FBFAF7;
 
-  --accent:#0B7A4F;
-  --accent-ink:#0B6B46;
-  --accent-line:#0B7A4F;
-  --panel-fill:#075C3B;
-  --amber:#9A6108;
+  --accent:#8A5707;
+  --accent-ink:#8A5707;
+  --accent-line:#8A5707;
+  --panel-fill:#17233A;
+  --amber:#8A5707;
   --amber-fill:#F2DFB4;
-  --brick:#A83A24;
+  --brick:#9A3320;
 
   --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(31,29,27,.45);
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --logo-blue:#1D4ED8;
+    --logo-green:#19C37D;
 
     --ground:#141312;
     --surface:#1E1C1A;
@@ -52,14 +52,14 @@
     --muted:#A09A93;
     --line:#35312D;
 
-    --sign:#0F7A50;
-    --sign-deep:#075C3B;
+    --sign:#24354F;
+    --sign-deep:#17233A;
     --on-sign:#FBFAF7;
 
-    --accent:#35C892;
-    --accent-ink:#35C892;
-    --accent-line:#35C892;
-    --panel-fill:#075C3B;
+    --accent:#E5B45E;
+    --accent-ink:#E5B45E;
+    --accent-line:#E5B45E;
+    --panel-fill:#17233A;
     --amber:#E5B45E;
     --amber-fill:#33290F;
     --brick:#E0806F;
@@ -68,7 +68,7 @@
   }
 }
 :root[data-theme="dark"]{
-  --logo-blue:#1D4ED8;
+  --logo-green:#19C37D;
 
   --ground:#141312;
   --surface:#1E1C1A;
@@ -77,14 +77,14 @@
   --muted:#A09A93;
   --line:#35312D;
 
-  --sign:#0F7A50;
-  --sign-deep:#075C3B;
+  --sign:#24354F;
+  --sign-deep:#17233A;
   --on-sign:#FBFAF7;
 
-  --accent:#35C892;
-  --accent-ink:#35C892;
-  --accent-line:#35C892;
-  --panel-fill:#075C3B;
+  --accent:#E5B45E;
+  --accent-ink:#E5B45E;
+  --accent-line:#E5B45E;
+  --panel-fill:#17233A;
   --amber:#E5B45E;
   --amber-fill:#33290F;
   --brick:#E0806F;
