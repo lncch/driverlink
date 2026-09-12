@@ -2,6 +2,7 @@
 
 export interface Member {
   name: string;
+  /** Section 1.5. Kept for the report; the slides show names only. */
   role: string;
 }
 

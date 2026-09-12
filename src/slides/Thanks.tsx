@@ -10,7 +10,7 @@ export default function Thanks() {
         Thank you.<br />Questions?
       </h1>
 
-      <div className="closing-team">
+      <div className="team-row">
         {TEAM.map((m) => (
           <span key={m.name}>{m.name}</span>
         ))}

@@ -11,12 +11,9 @@ export default function Title() {
 
       <h1>Your Next Opportunity.<br />Their Next Driver.</h1>
 
-      <div className="team">
+      <div className="team-row">
         {TEAM.map((m) => (
-          <div key={m.name}>
-            <div className="nm">{m.name}</div>
-            <div className="rl">{m.role}</div>
-          </div>
+          <span key={m.name}>{m.name}</span>
         ))}
       </div>
 
