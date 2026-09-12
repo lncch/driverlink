@@ -189,6 +189,8 @@ td.m{color:var(--muted)}
 
 /* section labels, matching the report's 1.6.1 and 1.6.2 headings */
 .featblock{display:flex;flex-direction:column;gap:9px}
+/* a sentence and the list that completes it, kept as one unit */
+.leadin{display:flex;flex-direction:column;gap:13px}
 .seclabel{font-size:17px;font-weight:700}
 .seclabel.in{color:var(--green-line)}
 .seclabel.out{color:var(--brick)}
