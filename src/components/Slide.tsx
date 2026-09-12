@@ -10,7 +10,7 @@ interface Props {
   active: boolean;
   /** 1-based slide number, shown on the sign. */
   number: number;
-  sign?: { arabic: string; english: string };
+  sign?: { english: string };
   children: ReactNode;
 }
 
@@ -84,7 +84,7 @@ export default function Slide({ active, number, sign, children }: Props) {
     <section className={active ? 'slide on' : 'slide'} aria-hidden={!active}>
       <div className="frame">
         {/* Outside the fit box, so the sign is the same size on every slide. */}
-        {sign && <SignPanel number={number} arabic={sign.arabic} english={sign.english} />}
+        {sign && <SignPanel number={number} english={sign.english} />}
         <div className="fitbox" ref={frame}>
           <div className="body" ref={body}>
             {children}

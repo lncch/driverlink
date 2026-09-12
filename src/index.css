@@ -113,12 +113,12 @@ body{
   background:var(--panel-fill);
   font-variant-numeric:tabular-nums;
 }
-.sign-text{display:flex;flex-direction:column;gap:1px;padding:clamp(10px,1.2vw,15px) clamp(16px,2vw,26px)}
 .sign-en{
   font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:600;
   font-size:clamp(17px,1.9vw,26px);line-height:1.25;
+  display:flex;align-items:center;
+  padding:clamp(11px,1.3vw,16px) clamp(16px,2vw,26px);
 }
-.sign-ar{font-size:clamp(13px,1.15vw,17px);font-weight:500;line-height:1.35;opacity:.93}
 
 h1{font-family:"Thmanyah Display",Georgia,serif;font-weight:900;
    font-size:clamp(38px,6vw,84px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance}
