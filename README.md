@@ -1,7 +1,7 @@
-# HireWheel — Phase 1 Presentation
+# HireWheel — Project Introduction
 
 Presentation 1 (Project Introduction) for the HireWheel group project.
-Software engineering group project, Phase 1.
+Software engineering group project.
 
 **Live deck:** https://lncch.github.io/swe-project/
 
@@ -78,7 +78,7 @@ want to achieve, what are we proposing.
 
 ```
 npm install
-npm run dev        # http://localhost:5173/driverlink/
+npm run dev        # http://localhost:5173/
 npm run build      # typecheck, then bundle into dist/
 npm run preview    # serve the production build
 ```
@@ -96,7 +96,7 @@ there rather than in the slide components.
 5. Goal and seven measurable objectives
 6. Proposed solution and main features
 7. Scope: included and excluded
-8. Assumptions, constraints, next phase
+8. Assumptions, constraints, what comes next
 
 ## Team
 

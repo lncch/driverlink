@@ -64,7 +64,7 @@ const variants = {
   // matches the deck
   'fishbone-dark.svg': { bg: '#101413', spine: '#E8EFEA', bone: '#2E9E72', tick: '#3A4A43',
                          text: '#E8EFEA', boxFill: '#8E3A2C', boxStroke: '#5E241A', boxText: '#FBFAF7' },
-  // for the Phase 1 report and anything printed
+  // for the report and anything printed
   'fishbone-light.svg': { bg: '#FFFFFF', spine: '#121514', bone: '#0A4E37', tick: '#BFC8C3',
                           text: '#121514', boxFill: '#8E3A2C', boxStroke: '#5E241A', boxText: '#FFFFFF' },
 };

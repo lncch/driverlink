@@ -1,4 +1,4 @@
-/** All Phase 1 report content, typed and separated from presentation. */
+/** All report content, typed and separated from presentation. */
 
 export interface Member {
   name: string;
