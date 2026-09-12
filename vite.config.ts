@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Project page lives at https://<user>.github.io/driverlink/, so assets
-// need that prefix. A custom domain later would change this to '/'.
+// Relative asset paths, so the build does not care what the repo is called.
+// An absolute base broke once already when the repo was renamed; the deck uses
+// hash routing, so nothing depends on the path prefix.
 export default defineConfig({
-  base: '/driverlink/',
+  base: './',
   plugins: [react()],
 });

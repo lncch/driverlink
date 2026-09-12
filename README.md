@@ -3,7 +3,7 @@
 Presentation 1 (Project Introduction) for the DriverLink group project.
 Software engineering group project, Phase 1.
 
-**Live deck:** https://lncch.github.io/driverlink/
+**Live deck:** https://lncch.github.io/swe-project/
 
 ## Using it
 
@@ -19,7 +19,7 @@ Software engineering group project, Phase 1.
 Or use the on-screen controls: the `‹` `›` buttons in the bar, the dot for
 any slide, or the invisible click strips down the left and right edges of the
 screen. Swipe left and right works on a touchscreen. The URL tracks the slide
-(`/driverlink/#5`), so a reload keeps your place and a link can point at one
+(`/swe-project/#5`), so a reload keeps your place and a link can point at one
 slide. A screen wake lock holds the display on while the deck is open.
 
 Each slide sizes its own content to the window: dense slides shrink so nothing
