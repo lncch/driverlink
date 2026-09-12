@@ -178,7 +178,14 @@ h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-
 /* ---------- title slide ---------- */
 .title-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2.6vw,36px)}
 .brandrow{display:flex;align-items:center;gap:clamp(16px,1.8vw,26px)}
-.mark{height:clamp(70px,8vw,124px);width:auto;display:block}
+.marktile{
+  display:grid;place-items:center;flex-shrink:0;
+  height:clamp(74px,8.4vw,128px);aspect-ratio:1;
+  background:var(--sign);
+  border-radius:clamp(15px,1.7vw,25px);
+  box-shadow:var(--panel-shadow);
+}
+.marktile img{height:64%;width:auto;display:block}
 .brandname{
   font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
   font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.018em;

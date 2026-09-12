@@ -5,7 +5,10 @@ export default function Title() {
   return (
     <div className="title-wrap">
       <div className="brandrow">
-        <img className="mark" src={mark} alt="" width={48} height={48} />
+        {/* White ring needs a dark ground, so the mark rides its own navy tile. */}
+        <span className="marktile">
+          <img src={mark} alt="" width={48} height={48} />
+        </span>
         <div className="brandname">
           HireWheel
           <span lang="ar" dir="rtl">منصّة توظيف السائقين في السعودية</span>
