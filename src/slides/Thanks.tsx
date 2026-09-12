@@ -1,20 +1,9 @@
-import { TEAM } from '../content';
-import Mark from '../components/Mark';
+import Bookend from '../components/Bookend';
 
 export default function Thanks() {
   return (
-    <div className="title-wrap closing">
-      <Mark />
-
-      <h1>
-        Thank you.<br />Questions?
-      </h1>
-
-      <div className="team-row">
-        {TEAM.map((m) => (
-          <span key={m.name}>{m.name}</span>
-        ))}
-      </div>
-    </div>
+    <Bookend>
+      Thank you.<br />Questions?
+    </Bookend>
   );
 }

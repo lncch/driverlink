@@ -365,12 +365,7 @@ td.m{color:var(--muted)}
 @media print{.expand{display:none}}
 
 
-/* ---------- closing slide: a bookend to the title, so no sign panel ---------- */
-.closing{justify-content:center;gap:clamp(18px,2.2vw,30px);align-items:flex-start}
-/* an svg with width:auto stretches to the column, which centred the mark */
-.closing .mark{height:clamp(58px,6.4vw,98px);align-self:flex-start}
-/* the one full-width row opts back in */
-.closing .team-row{align-self:stretch}
+.team-row{align-self:stretch}
 .team-row{
   display:flex;flex-wrap:wrap;gap:10px 28px;
   padding-top:clamp(12px,1.4vw,20px);border-top:1px solid var(--line);
