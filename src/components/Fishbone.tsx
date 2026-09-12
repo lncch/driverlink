@@ -34,7 +34,7 @@ export default function Fishbone() {
             y={298 + i * 32}
             fontSize={21}
             fontWeight={600}
-            fill="#201E1D"
+            fill="var(--sign)"
           >
             {line}
           </text>

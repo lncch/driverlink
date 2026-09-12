@@ -14,10 +14,10 @@
    --------------------------------------------------------------- */
 
 :root{
-  /* Sampled from the HireWheel mark: the ring's ink and the hub's blue. Amber
-     stays as a semantic warning colour, not a brand one. */
-  --brand-ink:#201E1D;
-  --brand-blue:#1D4ED8;
+  /* The mark's vivid blue is reserved for the mark. Deck chrome sits a step
+     deeper and less saturated so the logo stays the one saturated element;
+     amber is semantic, not brand. */
+  --logo-blue:#1D4ED8;
 
   --ground:#EDECEA;
   --surface:#F7F6F4;
@@ -26,25 +26,24 @@
   --muted:#5F5B58;
   --line:#CDC9C5;
 
-  --sign:#1D4ED8;
-  --sign-deep:#143391;
-  --on-sign:#F7F9FC;
+  --sign:#1C2A40;
+  --sign-deep:#121C2B;
+  --on-sign:#F7F8FA;
 
-  --accent:#1D4ED8;
-  --accent-ink:#1D4ED8;
-  --accent-line:#1D4ED8;
-  --panel-fill:#173CA6;
+  --accent:#2F4A75;
+  --accent-ink:#2F4A75;
+  --accent-line:#2F4A75;
+  --panel-fill:#1C2A40;
   --amber:#7A5810;
   --amber-fill:#F0DFB8;
   --brick:#94382A;
 
-  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(32,30,29,.55);
+  --panel-shadow:0 2px 0 var(--sign-deep), 0 10px 26px -18px rgba(32,30,29,.5);
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --brand-ink:#201E1D;
-    --brand-blue:#1D4ED8;
+    --logo-blue:#1D4ED8;
 
     --ground:#151414;
     --surface:#1E1D1C;
@@ -53,14 +52,14 @@
     --muted:#9C9791;
     --line:#332F2C;
 
-    --sign:#2E56C8;
-    --sign-deep:#1D4ED8;
-    --on-sign:#F7F9FC;
+    --sign:#2A3C5C;
+    --sign-deep:#1C2A40;
+    --on-sign:#F7F8FA;
 
-    --accent:#6E93F0;
-    --accent-ink:#6E93F0;
-    --accent-line:#6E93F0;
-    --panel-fill:#173CA6;
+    --accent:#8FA6C8;
+    --accent-ink:#8FA6C8;
+    --accent-line:#8FA6C8;
+    --panel-fill:#1C2A40;
     --amber:#E5B45E;
     --amber-fill:#33290F;
     --brick:#D4796A;
@@ -69,8 +68,7 @@
   }
 }
 :root[data-theme="dark"]{
-  --brand-ink:#201E1D;
-  --brand-blue:#1D4ED8;
+  --logo-blue:#1D4ED8;
 
   --ground:#151414;
   --surface:#1E1D1C;
@@ -79,14 +77,14 @@
   --muted:#9C9791;
   --line:#332F2C;
 
-  --sign:#2E56C8;
-  --sign-deep:#1D4ED8;
-  --on-sign:#F7F9FC;
+  --sign:#2A3C5C;
+  --sign-deep:#1C2A40;
+  --on-sign:#F7F8FA;
 
-  --accent:#6E93F0;
-  --accent-ink:#6E93F0;
-  --accent-line:#6E93F0;
-  --panel-fill:#173CA6;
+  --accent:#8FA6C8;
+  --accent-ink:#8FA6C8;
+  --accent-line:#8FA6C8;
+  --panel-fill:#1C2A40;
   --amber:#E5B45E;
   --amber-fill:#33290F;
   --brick:#D4796A;
