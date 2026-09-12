@@ -127,7 +127,7 @@ h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-
 /* ---------- title slide ---------- */
 .title-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2.6vw,36px)}
 .brandrow{display:flex;align-items:center;gap:clamp(16px,1.8vw,26px)}
-.mark{height:clamp(74px,8.4vw,128px);width:auto;display:block;flex-shrink:0}
+.mark{height:clamp(48px,5.4vw,82px);width:auto;display:block;flex-shrink:0}
 .brandname{
   font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
   font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.018em;
