@@ -7,6 +7,7 @@ import Goal from './slides/Goal';
 import Solution from './slides/Solution';
 import Scope from './slides/Scope';
 import Close from './slides/Close';
+import Thanks from './slides/Thanks';
 
 export interface SlideMeta {
   /** Short name, used for the navigation dots' accessible labels. */
@@ -29,4 +30,5 @@ export const SLIDES: SlideMeta[] = [
   { label: 'Proposed solution', sign: { arabic: 'ما هو الحل المقترح؟', english: 'What are we proposing?' }, Body: Solution },
   { label: 'Scope', sign: { arabic: 'ما حدود المشروع؟', english: 'Where does it stop?' }, Body: Scope },
   { label: 'What comes next', sign: { arabic: 'ما التالي؟', english: 'What comes next?' }, Body: Close },
+  { label: 'Thank you', Body: Thanks },
 ];

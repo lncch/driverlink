@@ -370,3 +370,20 @@ td.m{color:var(--muted)}
 
 @media print{.expand{display:none}}
 
+
+/* ---------- closing slide: a bookend to the title, so no sign panel ---------- */
+.closing{justify-content:center;gap:clamp(18px,2.2vw,30px);align-items:flex-start}
+/* an svg with width:auto stretches to the column, which centred the mark */
+.closing .mark{height:clamp(58px,6.4vw,98px);align-self:flex-start}
+.closing-ar{
+  font-size:clamp(17px,1.7vw,24px);color:var(--muted);
+  align-self:flex-start;
+  margin-top:calc(clamp(18px,2.2vw,30px) * -0.5);
+}
+/* the two full-width rows opt back in */
+.closing .closing-team,.closing .credits{align-self:stretch}
+.closing-team{
+  display:flex;flex-wrap:wrap;gap:10px 28px;
+  padding-top:clamp(12px,1.4vw,20px);border-top:1px solid var(--line);
+}
+.closing-team span{font-size:clamp(14px,1.2vw,17px);font-weight:500}

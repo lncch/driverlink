@@ -11,7 +11,6 @@ export default function Close() {
           <div className="quote">
             Next comes requirements elicitation and the use-case model.
           </div>
-          <p className="lede" style={{ marginTop: 20 }}>Any Questions?</p>
         </div>
       </div>
     </>
