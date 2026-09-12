@@ -5,14 +5,7 @@ export default function Close() {
   return (
     <>
       <h2>Where this leaves us.</h2>
-      <div className="cols c2">
-        <PainList items={CLOSING} />
-        <div>
-          <div className="quote">
-            Next comes requirements elicitation and the use-case model.
-          </div>
-        </div>
-      </div>
+      <PainList items={CLOSING} />
     </>
   );
 }
