@@ -393,15 +393,6 @@ td.m{color:var(--muted)}
 /* ---------- expandable diagrams and tables ---------- */
 .expandable{position:relative;cursor:zoom-in;border-radius:3px}
 .expandable:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.hint-expand{
-  position:absolute;inset-block-end:9px;inset-inline-end:12px;
-  font-size:12px;color:var(--muted);
-  padding:3px 9px;border-radius:4px;
-  background:color-mix(in srgb,var(--surface) 88%, transparent);
-  opacity:.55;transition:opacity .16s, color .16s;pointer-events:none;
-}
-.expandable:hover .hint-expand,
-.expandable:focus-visible .hint-expand{opacity:1;color:var(--green-line)}
 
 .scrim.expanded{padding:12px;align-items:center}
 .expanded-inner{
@@ -418,10 +409,8 @@ td.m{color:var(--muted)}
 .expanded-inner table{min-width:820px}
 .expanded-inner th,.expanded-inner td{font-size:17px;padding:13px 18px}
 .expanded-inner td.id{font-size:16px}
-.expanded-inner .expand{display:none}
 .close{position:absolute;inset-block-end:12px;inset-inline-end:16px}
 
-@media print{.expand{display:none}}
 
 
 .team-row{align-self:stretch}

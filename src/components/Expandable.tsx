@@ -49,7 +49,6 @@ export default function Expandable({ label, children }: Props) {
         onKeyDown={onKeyDown}
       >
         {children}
-        <span className="hint-expand" aria-hidden="true">Click to expand</span>
       </div>
 
       {open && (
