@@ -114,11 +114,11 @@ body{
   font-variant-numeric:tabular-nums;
 }
 .sign-text{display:flex;flex-direction:column;gap:1px;padding:clamp(10px,1.2vw,15px) clamp(16px,2vw,26px)}
-.sign-ar{font-size:clamp(17px,1.9vw,26px);font-weight:500;line-height:1.35}
 .sign-en{
   font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:600;
-  font-size:clamp(13px,1.15vw,17px);line-height:1.25;opacity:.93;
+  font-size:clamp(17px,1.9vw,26px);line-height:1.25;
 }
+.sign-ar{font-size:clamp(13px,1.15vw,17px);font-weight:500;line-height:1.35;opacity:.93}
 
 h1{font-family:"Thmanyah Display",Georgia,serif;font-weight:900;
    font-size:clamp(38px,6vw,84px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance}
@@ -137,10 +137,6 @@ h3{font-family:"Thmanyah Sans",Arial,sans-serif;font-weight:700;letter-spacing:-
   font-family:"Thmanyah Display",Georgia,serif;font-weight:700;
   font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.018em;
   display:flex;flex-direction:column;gap:9px;
-}
-.brandname span{
-  font-family:"Thmanyah Sans",sans-serif;font-weight:400;
-  font-size:clamp(12px,1.05vw,16px);color:var(--muted);letter-spacing:0;
 }
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
 .team div{background:var(--ground);padding:15px 17px 17px}

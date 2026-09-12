@@ -58,7 +58,7 @@ rather than two. Thmanyah Serif Display for headlines, Thmanyah Sans for
 everything else. The five weights are self-hosted from `src/fonts/`, so the
 deck needs no font CDN at presentation time.
 
-Nine slides for a 7-minute slot. Slides 2 to 8 each open with a bilingual sign panel, and
+Nine slides for a 7-minute slot. Slides 2 to 8 each open with a bilingual sign panel (English over Arabic), and
 the seven panels together walk the question sequence the presentation has to
 answer: what is the problem, why does it happen, who is affected, what do we
 want to achieve, what are we proposing.
