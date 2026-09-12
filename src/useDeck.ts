@@ -120,6 +120,66 @@ export function useDeck() {
     return () => window.removeEventListener('keydown', onKey);
   }, [go, step, toggleFullscreen]);
 
+  /* Wheel and trackpad: one slide per gesture.
+     A trackpad flick fires dozens of events with a decaying delta, so the
+     deltas accumulate to a threshold and then lock until the momentum goes
+     quiet. Without that, one swipe jumps several slides. */
+  useEffect(() => {
+    const THRESHOLD = 90;   // accumulated pixels before a move
+    const SETTLE_MS = 200;  // quiet time that ends one gesture
+    let travel = 0;
+    let locked = false;
+    let settle: number | undefined;
+
+    /** True when something under the cursor can absorb this scroll itself. */
+    function ownScroller(target: EventTarget | null, delta: number) {
+      let el = target instanceof Element ? target : null;
+      while (el && el !== document.body) {
+        const overflow = getComputedStyle(el).overflowY;
+        if (overflow === 'auto' || overflow === 'scroll') {
+          const room = el.scrollHeight - el.clientHeight;
+          if (room > 1) {
+            const atTop = el.scrollTop <= 0;
+            const atEnd = el.scrollTop >= room - 1;
+            if (!(delta < 0 && atTop) && !(delta > 0 && atEnd)) return true;
+          }
+        }
+        el = el.parentElement;
+      }
+      return false;
+    }
+
+    function onWheel(e: WheelEvent) {
+      // an expanded diagram owns the wheel until it closes
+      if (document.body.dataset.overlay) return;
+      // browsers report lines or pages as well as pixels
+      const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 400 : 1;
+      const delta = e.deltaY * unit;
+      if (!delta) return;
+      if (ownScroller(e.target, delta)) return;
+
+      e.preventDefault();
+      if (settle !== undefined) window.clearTimeout(settle);
+      settle = window.setTimeout(() => {
+        locked = false;
+        travel = 0;
+      }, SETTLE_MS);
+
+      if (locked) return;
+      travel += delta;
+      if (Math.abs(travel) < THRESHOLD) return;
+      step(travel > 0 ? 1 : -1);
+      locked = true;
+      travel = 0;
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: false });
+    return () => {
+      if (settle !== undefined) window.clearTimeout(settle);
+      window.removeEventListener('wheel', onWheel);
+    };
+  }, [step]);
+
   /* Swipe, for presenting from a phone or tablet. */
   const touchStart = useRef<number | null>(null);
   useEffect(() => {

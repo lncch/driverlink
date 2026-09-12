@@ -20,7 +20,8 @@ export default function HelpOverlay({ onClose }: { onClose: () => void }) {
             </div>
           ))}
         </dl>
-        <p className="note">Swipe left or right on a touchscreen. The URL tracks the slide, so a reload keeps your place.</p>
+              <p className="note">Scroll to move between slides, or swipe left and right on a
+        touchscreen. The URL tracks the slide, so a reload keeps your place.</p>
         <button type="button" className="btn" onClick={onClose}>Close</button>
       </div>
     </div>

@@ -18,7 +18,8 @@ Software engineering group project.
 
 Or use the on-screen controls: the `‹` `›` buttons in the bar, the dot for
 any slide, or the invisible click strips down the left and right edges of the
-screen. Swipe left and right works on a touchscreen. The URL tracks the slide
+screen. Scrolling moves between slides, one slide per gesture. Swipe left and right
+works on a touchscreen. The URL tracks the slide
 (`/swe-project/#5`), so a reload keeps your place and a link can point at one
 slide. A screen wake lock holds the display on while the deck is open.
 
