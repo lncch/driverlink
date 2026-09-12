@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="570" viewBox="0 0 1660 570">
+<title>Fishbone cause and effect diagram for the HireWheel problem: six cause categories feeding one effect</title>
+<rect x="0" y="0" width="1660" height="570" fill="#101413"/>
+<line x1="90" y1="285" x2="1290" y2="285" stroke="#E8EFEA" stroke-width="3"/>
+<polygon points="1290,273 1318,285 1290,297" fill="#E8EFEA"/>
+<rect x="1330" y="192" width="320" height="186" rx="7" fill="#8E3A2C" stroke="#5E241A" stroke-width="2"/>
+<text x="1356" y="238" font-size="21" font-weight="600" fill="#FBFAF7" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Qualified drivers in Saudi</text>
+<text x="1356" y="270" font-size="21" font-weight="600" fill="#FBFAF7" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Arabia and the companies</text>
+<text x="1356" y="302" font-size="21" font-weight="600" fill="#FBFAF7" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">that need them do not</text>
+<text x="1356" y="334" font-size="21" font-weight="600" fill="#FBFAF7" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">reliably find each other.</text>
+<line x1="275" y1="40" x2="430" y2="285" stroke="#2E9E72" stroke-width="2.5"/>
+<text x="275" y="23" font-size="22" font-weight="700" fill="#2E9E72" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Drivers</text>
+<line x1="321.5" y1="113.5" x2="332.5" y2="113.5" stroke="#3A4A43" stroke-width="2"/>
+<text x="339.5" y="119.0" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Rely on word of mouth</text>
+<line x1="360.3" y1="174.8" x2="371.3" y2="174.8" stroke="#3A4A43" stroke-width="2"/>
+<text x="378.3" y="180.3" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">No pipeline after a contract</text>
+<line x1="399.0" y1="236.0" x2="410.0" y2="236.0" stroke="#3A4A43" stroke-width="2"/>
+<text x="417.0" y="241.5" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Cannot compare employers</text>
+<line x1="595" y1="40" x2="750" y2="285" stroke="#2E9E72" stroke-width="2.5"/>
+<text x="595" y="23" font-size="22" font-weight="700" fill="#2E9E72" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Companies</text>
+<line x1="641.5" y1="113.5" x2="652.5" y2="113.5" stroke="#3A4A43" stroke-width="2"/>
+<text x="659.5" y="119.0" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Hiring by personal networks</text>
+<line x1="680.3" y1="174.8" x2="691.3" y2="174.8" stroke="#3A4A43" stroke-width="2"/>
+<text x="698.3" y="180.3" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Ads reach the wrong people</text>
+<line x1="719.0" y1="236.0" x2="730.0" y2="236.0" stroke="#3A4A43" stroke-width="2"/>
+<text x="737.0" y="241.5" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Manual CV screening</text>
+<line x1="915" y1="40" x2="1070" y2="285" stroke="#2E9E72" stroke-width="2.5"/>
+<text x="915" y="23" font-size="22" font-weight="700" fill="#2E9E72" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Information</text>
+<line x1="961.5" y1="113.5" x2="972.5" y2="113.5" stroke="#3A4A43" stroke-width="2"/>
+<text x="979.5" y="119.0" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Licence class never captured</text>
+<line x1="1000.3" y1="174.8" x2="1011.3" y2="174.8" stroke="#3A4A43" stroke-width="2"/>
+<text x="1018.3" y="180.3" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Salary and route left vague</text>
+<line x1="1039.0" y1="236.0" x2="1050.0" y2="236.0" stroke="#3A4A43" stroke-width="2"/>
+<text x="1057.0" y="241.5" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Experience is free text</text>
+<line x1="275" y1="530" x2="430" y2="285" stroke="#2E9E72" stroke-width="2.5"/>
+<text x="275" y="560" font-size="22" font-weight="700" fill="#2E9E72" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Technology</text>
+<line x1="321.5" y1="456.5" x2="332.5" y2="456.5" stroke="#3A4A43" stroke-width="2"/>
+<text x="339.5" y="462.0" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Job boards ignore licences</text>
+<line x1="360.3" y1="395.3" x2="371.3" y2="395.3" stroke="#3A4A43" stroke-width="2"/>
+<text x="378.3" y="400.8" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">No filter by vehicle category</text>
+<line x1="399.0" y1="334.0" x2="410.0" y2="334.0" stroke="#3A4A43" stroke-width="2"/>
+<text x="417.0" y="339.5" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Nothing mobile-first</text>
+<line x1="595" y1="530" x2="750" y2="285" stroke="#2E9E72" stroke-width="2.5"/>
+<text x="595" y="560" font-size="22" font-weight="700" fill="#2E9E72" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Trust</text>
+<line x1="641.5" y1="456.5" x2="652.5" y2="456.5" stroke="#3A4A43" stroke-width="2"/>
+<text x="659.5" y="462.0" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">No identity verification</text>
+<line x1="680.3" y1="395.3" x2="691.3" y2="395.3" stroke="#3A4A43" stroke-width="2"/>
+<text x="698.3" y="400.8" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">No commercial-record check</text>
+<line x1="719.0" y1="334.0" x2="730.0" y2="334.0" stroke="#3A4A43" stroke-width="2"/>
+<text x="737.0" y="339.5" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">No history on either side</text>
+<line x1="915" y1="530" x2="1070" y2="285" stroke="#2E9E72" stroke-width="2.5"/>
+<text x="915" y="560" font-size="22" font-weight="700" fill="#2E9E72" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Market</text>
+<line x1="961.5" y1="456.5" x2="972.5" y2="456.5" stroke="#3A4A43" stroke-width="2"/>
+<text x="979.5" y="462.0" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Overseas hiring is default</text>
+<line x1="1000.3" y1="395.3" x2="1011.3" y2="395.3" stroke="#3A4A43" stroke-width="2"/>
+<text x="1018.3" y="400.8" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Saudization targets unmet</text>
+<line x1="1039.0" y1="334.0" x2="1050.0" y2="334.0" stroke="#3A4A43" stroke-width="2"/>
+<text x="1057.0" y="339.5" font-size="16.5" fill="#E8EFEA" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">Visa and transfer overhead</text>
+</svg>

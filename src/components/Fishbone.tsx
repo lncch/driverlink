@@ -54,8 +54,6 @@ export default function Fishbone() {
                 fontSize={22}
                 fontWeight={700}
                 fill="var(--accent-line)"
-                fontFamily="Archivo, Arial, sans-serif"
-                fontStretch="112%"
               >
                 {cause.category}
               </text>
